@@ -1,9 +1,3 @@
-
----
-
-## `docs/backlog/00-epics.md`
-
-```md
 # Initial Epics
 
 ## 1. Purpose
@@ -42,11 +36,10 @@ The epics will later be converted into GitHub Issues or GitHub Project items.
 
 ### EPIC-01 — Project Documentation Foundation
 
-Goal:
-
+**Goal:**  
 Create the initial documentation structure for requirements, roadmap, architecture, backlog, decisions and risks.
 
-Initial tasks:
+**Initial tasks:**
 
 - create `docs/` structure,
 - add project overview,
@@ -60,11 +53,10 @@ Initial tasks:
 
 ### EPIC-02 — Landing Page Implementation
 
-Goal:
-
+**Goal:**  
 Build the first version of the public landing page.
 
-Initial tasks:
+**Initial tasks:**
 
 - create landing page layout,
 - implement hero section,
@@ -80,11 +72,10 @@ Initial tasks:
 
 ### EPIC-03 — Contact Form & Lead Capture
 
-Goal:
-
+**Goal:**  
 Allow potential clients to submit contact requests.
 
-Initial tasks:
+**Initial tasks:**
 
 - create contact form UI,
 - validate form fields,
@@ -98,11 +89,10 @@ Initial tasks:
 
 ### EPIC-04 — Backend API Foundation
 
-Goal:
-
+**Goal:**  
 Create the initial backend API structure.
 
-Initial tasks:
+**Initial tasks:**
 
 - create backend application,
 - add `/health` endpoint,
@@ -116,11 +106,10 @@ Initial tasks:
 
 ### EPIC-05 — Initial GCP Setup
 
-Goal:
-
+**Goal:**  
 Prepare the project for deployment to Google Cloud Platform.
 
-Initial tasks:
+**Initial tasks:**
 
 - create GCP project,
 - configure billing budget,
@@ -133,11 +122,10 @@ Initial tasks:
 
 ### EPIC-06 — Basic Security & Privacy
 
-Goal:
-
+**Goal:**  
 Add initial security and privacy foundations.
 
-Initial tasks:
+**Initial tasks:**
 
 - ensure secrets are not committed,
 - configure environment variables,
@@ -150,11 +138,10 @@ Initial tasks:
 
 ### EPIC-07 — Chatbot Widget UI
 
-Goal:
-
+**Goal:**  
 Add a chatbot widget to the website.
 
-Initial tasks:
+**Initial tasks:**
 
 - create chat widget component,
 - add message list,
@@ -167,11 +154,10 @@ Initial tasks:
 
 ### EPIC-08 — Chat API
 
-Goal:
-
+**Goal:**  
 Create backend API for chatbot conversations.
 
-Initial tasks:
+**Initial tasks:**
 
 - add `/api/chat` endpoint,
 - validate chat requests,
@@ -183,11 +169,10 @@ Initial tasks:
 
 ### EPIC-09 — LLM Provider Integration
 
-Goal:
-
+**Goal:**  
 Connect the backend with an AI model provider.
 
-Initial tasks:
+**Initial tasks:**
 
 - create LLM service interface,
 - create provider adapter,
@@ -199,11 +184,10 @@ Initial tasks:
 
 ### EPIC-10 — Chatbot Prompt & Guardrails
 
-Goal:
-
+**Goal:**  
 Define safe and useful chatbot behavior.
 
-Initial tasks:
+**Initial tasks:**
 
 - create system prompt,
 - describe service offer,
@@ -216,14 +200,133 @@ Initial tasks:
 
 ### EPIC-11 — Chatbot Logging & Cost Control
 
-Goal:
+**Goal:**  
+Control chatbot usage and future costs.
 
-Control usage and future costs.
-
-Initial tasks:
+**Initial tasks:**
 
 - log chat request status,
 - define message length limits,
 - define session message limits,
-- prepare token/cost tracking,
+- prepare token and cost tracking,
 - prepare rate limiting.
+
+---
+
+### EPIC-12 — Lead Handling & Mail Automation
+
+**Goal:**  
+Automate selected parts of lead processing and email follow-up.
+
+**Initial tasks:**
+
+- define lead status model,
+- classify incoming leads,
+- generate internal lead summary,
+- prepare email notification flow,
+- prepare draft response generation,
+- define manual approval rules.
+
+---
+
+### EPIC-13 — Multi-client Configuration
+
+**Goal:**  
+Prepare the system for creating personalized chatbot configurations for multiple clients.
+
+**Initial tasks:**
+
+- define client entity,
+- define client configuration model,
+- define chatbot configuration model,
+- prepare client-specific prompt configuration,
+- define client-level limits,
+- design embeddable widget approach.
+
+---
+
+### EPIC-14 — Knowledge Base / RAG
+
+**Goal:**  
+Allow chatbots to answer using client-specific documents and knowledge sources.
+
+**Initial tasks:**
+
+- define knowledge source model,
+- define document ingestion process,
+- define chunking strategy,
+- define embedding strategy,
+- define retrieval flow,
+- define grounded response rules.
+
+---
+
+### EPIC-15 — Admin Panel
+
+**Goal:**  
+Create an internal panel for managing clients, leads, chatbots and knowledge sources.
+
+**Initial tasks:**
+
+- define admin user needs,
+- design admin navigation,
+- define client management views,
+- define lead management views,
+- define chatbot configuration views,
+- define access control requirements.
+
+---
+
+### EPIC-16 — Voice Assistant
+
+**Goal:**  
+Prepare future support for AI voice assistants.
+
+**Initial tasks:**
+
+- research voice provider options,
+- define call flow,
+- define transcription flow,
+- define text-to-speech flow,
+- define call summary model,
+- define human handoff approach,
+- define compliance requirements.
+
+---
+
+### EPIC-17 — Production Monitoring & Hardening
+
+**Goal:**  
+Improve reliability, security, cost control and operational readiness.
+
+**Initial tasks:**
+
+- define uptime monitoring,
+- define backend alerting,
+- define cost alerts,
+- define logging rules,
+- define incident response process,
+- prepare CI/CD hardening,
+- prepare security checklist.
+
+---
+
+## 4. MVP 0 Priority Epics
+
+The first implementation focus should be:
+
+1. EPIC-01 — Project Documentation Foundation
+2. EPIC-02 — Landing Page Implementation
+3. EPIC-03 — Contact Form & Lead Capture
+4. EPIC-04 — Backend API Foundation
+5. EPIC-05 — Initial GCP Setup
+6. EPIC-06 — Basic Security & Privacy
+
+---
+
+## 5. Next Step
+
+The next step is to create a detailed implementation backlog for MVP 0 in:
+
+```text
+docs/backlog/01-mvp-0-implementation-backlog.md
