@@ -93,3 +93,6 @@ docs/
   backlog/        # Epics, user stories and technical tasks
   decisions/      # Architecture Decision Records
   risks/          # Risk register and mitigation plans
+  operations/      # Local development, deployment and operations notes
+  codex/           # Codex workflow and reusable prompts
+```
