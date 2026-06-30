@@ -6,6 +6,16 @@ This document contains the initial list of epics derived from the MVP requiremen
 
 The epics will later be converted into GitHub Issues or GitHub Project items.
 
+Start from the main [documentation index](../README.md) for broader project navigation.
+
+Related documents:
+
+- [Requirements index](../requirements/00-requirements-index.md)
+- [MVP 0 requirements](../requirements/01-mvp-0-foundation-landing-page.md)
+- [MVP 1 requirements](../requirements/02-mvp-1-chatbot-demo.md)
+- [MVP 0 implementation backlog](01-mvp-0-implementation-backlog.md)
+- [MVP 1 implementation backlog](02-mvp-1-implementation-backlog.md)
+
 ---
 
 ## 2. Epic List
@@ -328,5 +338,4 @@ The first implementation focus should be:
 
 The next step is to create a detailed implementation backlog for MVP 0 in:
 
-```text
-docs/backlog/01-mvp-0-implementation-backlog.md
+[docs/backlog/01-mvp-0-implementation-backlog.md](01-mvp-0-implementation-backlog.md)

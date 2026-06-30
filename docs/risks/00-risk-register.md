@@ -6,6 +6,8 @@ This document tracks project risks, their impact and mitigation strategies.
 
 The risk register should be updated as the project grows.
 
+AI-specific MVP 1 risks are tracked in the [AI risk register](01-ai-risk-register.md).
+
 ---
 
 ## 2. Risk Table

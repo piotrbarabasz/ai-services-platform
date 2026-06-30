@@ -72,23 +72,23 @@ MVP 0 does not include:
 
 ---
 
-# EPIC-01 — Project & Documentation Foundation
+## EPIC-01 — Project & Documentation Foundation
 
-## Goal
+### Goal
 
 Create the initial repository and documentation structure that will be used as the source of truth for project planning and implementation.
 
-## User Story
+### User Story
 
 As a project owner, I want to have a clear documentation structure, so that requirements, roadmap, architecture, risks and backlog can be developed in an organized way.
 
-## Related Requirements
+### Related Requirements
 
 * WEB-001
 * GCP-001
 * GCP-005
 
-## Technical Tasks
+### Technical Tasks
 
 | Task ID      | Task                               | Priority |
 | ------------ | ---------------------------------- | -------- |
@@ -102,7 +102,7 @@ As a project owner, I want to have a clear documentation structure, so that requ
 | MVP0-DOC-008 | Add initial risk register          | Medium   |
 | MVP0-DOC-009 | Add initial ADR documents          | Medium   |
 
-## Acceptance Criteria
+### Acceptance Criteria
 
 * `docs/` directory exists.
 * Documentation is split into logical categories.
@@ -112,34 +112,34 @@ As a project owner, I want to have a clear documentation structure, so that requ
 * Initial risks are documented.
 * Initial architecture decisions are documented.
 
-## Dependencies
+### Dependencies
 
 None.
 
-## Notes
+### Notes
 
 This epic is mostly documentation-related and should be completed before implementation starts.
 
 ---
 
-# EPIC-02 — Frontend Application Foundation
+## EPIC-02 — Frontend Application Foundation
 
-## Goal
+### Goal
 
 Create the initial frontend application structure for the public website.
 
-## User Story
+### User Story
 
 As a potential client, I want to open a professional website, so that I can understand what AI services are offered.
 
-## Related Requirements
+### Related Requirements
 
 * WEB-001
 * WEB-002
 * WEB-003
 * WEB-010
 
-## Technical Tasks
+### Technical Tasks
 
 | Task ID     | Task                                  | Priority |
 | ----------- | ------------------------------------- | -------- |
@@ -152,7 +152,7 @@ As a potential client, I want to open a professional website, so that I can unde
 | MVP0-FE-007 | Add base responsive styling           | High     |
 | MVP0-FE-008 | Add basic error/loading UI patterns   | Low      |
 
-## Suggested Page Structure
+### Suggested Page Structure
 
 ```text
 /
@@ -168,7 +168,7 @@ As a potential client, I want to open a professional website, so that I can unde
   Optional terms page
 ```
 
-## Suggested Frontend Structure
+### Suggested Frontend Structure
 
 ```text
 frontend/
@@ -192,7 +192,7 @@ frontend/
       models/
 ```
 
-## Acceptance Criteria
+### Acceptance Criteria
 
 * Frontend application starts locally.
 * Homepage route is available.
@@ -201,30 +201,30 @@ frontend/
 * Shared components are separated from page components.
 * No API keys or secrets are stored in frontend code.
 
-## Dependencies
+### Dependencies
 
 * EPIC-01 — Project & Documentation Foundation
 
 ---
 
-# EPIC-03 — Landing Page Implementation
+## EPIC-03 — Landing Page Implementation
 
-## Goal
+### Goal
 
 Implement the first version of the public landing page describing the AI services offer.
 
-## User Story
+### User Story
 
 As a potential client, I want to understand the offer quickly, so that I can decide whether to contact the business.
 
-## Related Requirements
+### Related Requirements
 
 * WEB-001
 * WEB-002
 * WEB-003
 * WEB-010
 
-## Required Landing Page Sections
+### Required Landing Page Sections
 
 | Section     | Purpose                               | Priority |
 | ----------- | ------------------------------------- | -------- |
@@ -238,7 +238,7 @@ As a potential client, I want to understand the offer quickly, so that I can dec
 | Contact CTA | Lead user to contact form             | High     |
 | Footer      | Add links and legal information       | Medium   |
 
-## Technical Tasks
+### Technical Tasks
 
 | Task ID     | Task                               | Priority |
 | ----------- | ---------------------------------- | -------- |
@@ -252,7 +252,7 @@ As a potential client, I want to understand the offer quickly, so that I can dec
 | MVP0-LP-008 | Add responsive behavior for mobile | High     |
 | MVP0-LP-009 | Add basic accessibility attributes | Medium   |
 
-## Suggested Services to Present
+### Suggested Services to Present
 
 The landing page should present services such as:
 
@@ -263,7 +263,7 @@ The landing page should present services such as:
 * customer support automation,
 * future 24/7 voice assistants.
 
-## Acceptance Criteria
+### Acceptance Criteria
 
 * Landing page contains all required core sections.
 * The offer is clear and understandable.
@@ -272,23 +272,23 @@ The landing page should present services such as:
 * Page has no obvious layout issues.
 * Content does not promise features that are not yet available.
 
-## Dependencies
+### Dependencies
 
 * EPIC-02 — Frontend Application Foundation
 
 ---
 
-# EPIC-04 — Contact Form UI
+## EPIC-04 — Contact Form UI
 
-## Goal
+### Goal
 
 Create a contact form that allows potential clients to submit a request.
 
-## User Story
+### User Story
 
 As a potential client, I want to submit my contact details and project needs, so that I can request a consultation or offer.
 
-## Related Requirements
+### Related Requirements
 
 * WEB-004
 * WEB-005
@@ -296,7 +296,7 @@ As a potential client, I want to submit my contact details and project needs, so
 * WEB-007
 * WEB-008
 
-## Contact Form Fields
+### Contact Form Fields
 
 | Field            | Required | Notes                            |
 | ---------------- | -------- | -------------------------------- |
@@ -308,7 +308,7 @@ As a potential client, I want to submit my contact details and project needs, so
 | Message          | Yes      | Description of client need       |
 | Consent checkbox | Yes      | Personal data/contact consent    |
 
-## Suggested Service Type Options
+### Suggested Service Type Options
 
 ```text
 Website with AI chatbot
@@ -320,7 +320,7 @@ Not sure yet
 Other
 ```
 
-## Technical Tasks
+### Technical Tasks
 
 | Task ID     | Task                                         | Priority |
 | ----------- | -------------------------------------------- | -------- |
@@ -334,7 +334,7 @@ Other
 | MVP0-CF-008 | Prevent duplicate submissions during loading | Medium   |
 | MVP0-CF-009 | Add basic spam protection placeholder        | Medium   |
 
-## Acceptance Criteria
+### Acceptance Criteria
 
 * User can fill in the form.
 * Required fields are validated.
@@ -345,24 +345,24 @@ Other
 * Form shows error message after failed submission.
 * Form does not expose backend or secret configuration.
 
-## Dependencies
+### Dependencies
 
 * EPIC-02 — Frontend Application Foundation
 * EPIC-05 — Backend API Foundation
 
 ---
 
-# EPIC-05 — Backend API Foundation
+## EPIC-05 — Backend API Foundation
 
-## Goal
+### Goal
 
 Create the initial backend API structure for health checks and future business endpoints.
 
-## User Story
+### User Story
 
 As a developer, I want a clean backend API foundation, so that contact form, chatbot and future automation features can be implemented safely.
 
-## Related Requirements
+### Related Requirements
 
 * API-001
 * API-002
@@ -370,14 +370,14 @@ As a developer, I want a clean backend API foundation, so that contact form, cha
 * API-004
 * API-005
 
-## Required Endpoints
+### Required Endpoints
 
 | Method | Endpoint       | Purpose                  |
 | ------ | -------------- | ------------------------ |
 | GET    | `/health`      | Application health check |
 | POST   | `/api/contact` | Submit contact form      |
 
-## Suggested Backend Structure
+### Suggested Backend Structure
 
 ```text
 backend/
@@ -398,7 +398,7 @@ backend/
       test_contact.py
 ```
 
-## Technical Tasks
+### Technical Tasks
 
 | Task ID      | Task                                 | Priority |
 | ------------ | ------------------------------------ | -------- |
@@ -412,7 +412,7 @@ backend/
 | MVP0-API-008 | Add CORS configuration               | Medium   |
 | MVP0-API-009 | Add basic endpoint tests             | Medium   |
 
-## Acceptance Criteria
+### Acceptance Criteria
 
 * Backend starts locally.
 * `/health` returns successful response.
@@ -423,30 +423,30 @@ backend/
 * CORS configuration exists.
 * Tests can be run locally.
 
-## Dependencies
+### Dependencies
 
 * EPIC-01 — Project & Documentation Foundation
 
 ---
 
-# EPIC-06 — Lead Capture Foundation
+## EPIC-06 — Lead Capture Foundation
 
-## Goal
+### Goal
 
 Handle contact form submissions as leads.
 
-## User Story
+### User Story
 
 As a business owner, I want contact form submissions to be captured as leads, so that I can follow up with potential clients.
 
-## Related Requirements
+### Related Requirements
 
 * WEB-004
 * WEB-005
 * API-002
 * API-003
 
-## Lead Data Model
+### Lead Data Model
 
 Suggested initial lead model:
 
@@ -473,7 +473,7 @@ rejected
 closed
 ```
 
-## Technical Tasks
+### Technical Tasks
 
 | Task ID       | Task                                     | Priority |
 | ------------- | ---------------------------------------- | -------- |
@@ -485,7 +485,7 @@ closed
 | MVP0-LEAD-006 | Add notification placeholder             | Low      |
 | MVP0-LEAD-007 | Document future lead storage decision    | Medium   |
 
-## Initial Persistence Options
+### Initial Persistence Options
 
 For MVP 0, lead persistence can be implemented in one of the following ways:
 
@@ -497,7 +497,7 @@ For MVP 0, lead persistence can be implemented in one of the following ways:
 
 The final decision should be documented as an ADR before production launch.
 
-## Acceptance Criteria
+### Acceptance Criteria
 
 * Backend receives lead data.
 * Lead payload is validated.
@@ -507,29 +507,29 @@ The final decision should be documented as an ADR before production launch.
 * Lead handling does not expose sensitive data in logs.
 * Future persistence option is documented.
 
-## Dependencies
+### Dependencies
 
 * EPIC-05 — Backend API Foundation
 
 ---
 
-# EPIC-07 — SEO, Privacy & Legal Foundation
+## EPIC-07 — SEO, Privacy & Legal Foundation
 
-## Goal
+### Goal
 
 Add basic SEO and legal/privacy foundations for the public website.
 
-## User Story
+### User Story
 
 As a potential client, I want to understand how my data is processed, so that I can safely submit the contact form.
 
-## Related Requirements
+### Related Requirements
 
 * WEB-009
 * WEB-010
 * SEC-003
 
-## Technical Tasks
+### Technical Tasks
 
 | Task ID        | Task                               | Priority |
 | -------------- | ---------------------------------- | -------- |
@@ -542,7 +542,7 @@ As a potential client, I want to understand how my data is processed, so that I 
 | MVP0-SEO-004   | Add semantic heading structure     | Medium   |
 | MVP0-SEO-005   | Add basic sitemap plan             | Low      |
 
-## Acceptance Criteria
+### Acceptance Criteria
 
 * Privacy policy page exists.
 * Contact form includes consent checkbox.
@@ -551,24 +551,24 @@ As a potential client, I want to understand how my data is processed, so that I 
 * Heading structure uses one main H1.
 * Website does not collect data without visible consent information.
 
-## Dependencies
+### Dependencies
 
 * EPIC-02 — Frontend Application Foundation
 * EPIC-04 — Contact Form UI
 
 ---
 
-# EPIC-08 — Initial GCP Deployment Preparation
+## EPIC-08 — Initial GCP Deployment Preparation
 
-## Goal
+### Goal
 
 Prepare the application for future deployment to Google Cloud Platform.
 
-## User Story
+### User Story
 
 As a developer, I want the project to be ready for GCP deployment, so that the first public version can be deployed with minimal rework.
 
-## Related Requirements
+### Related Requirements
 
 * GCP-001
 * GCP-002
@@ -578,7 +578,7 @@ As a developer, I want the project to be ready for GCP deployment, so that the f
 * COST-001
 * COST-002
 
-## Technical Tasks
+### Technical Tasks
 
 | Task ID      | Task                                         | Priority |
 | ------------ | -------------------------------------------- | -------- |
@@ -592,7 +592,7 @@ As a developer, I want the project to be ready for GCP deployment, so that the f
 | MVP0-GCP-008 | Add `/health` endpoint for deployment checks | High     |
 | MVP0-GCP-009 | Document local vs production configuration   | Medium   |
 
-## Acceptance Criteria
+### Acceptance Criteria
 
 * Backend can be containerized.
 * Environment variables are documented.
@@ -602,23 +602,23 @@ As a developer, I want the project to be ready for GCP deployment, so that the f
 * `/health` endpoint is available for monitoring.
 * Deployment notes are clear enough to follow later.
 
-## Dependencies
+### Dependencies
 
 * EPIC-05 — Backend API Foundation
 
 ---
 
-# EPIC-09 — Basic Security Foundation
+## EPIC-09 — Basic Security Foundation
 
-## Goal
+### Goal
 
 Add basic security practices before exposing the application publicly.
 
-## User Story
+### User Story
 
 As a project owner, I want the application to follow basic security rules, so that API keys, user data and infrastructure are protected.
 
-## Related Requirements
+### Related Requirements
 
 * SEC-001
 * SEC-002
@@ -626,7 +626,7 @@ As a project owner, I want the application to follow basic security rules, so th
 * OBS-001
 * OBS-002
 
-## Technical Tasks
+### Technical Tasks
 
 | Task ID      | Task                                      | Priority |
 | ------------ | ----------------------------------------- | -------- |
@@ -638,7 +638,7 @@ As a project owner, I want the application to follow basic security rules, so th
 | MVP0-SEC-006 | Add spam protection plan for contact form | Medium   |
 | MVP0-SEC-007 | Document secret management approach       | Medium   |
 
-## Acceptance Criteria
+### Acceptance Criteria
 
 * `.env` is not committed.
 * `.env.example` exists.
@@ -647,23 +647,23 @@ As a project owner, I want the application to follow basic security rules, so th
 * CORS configuration exists.
 * Secret management approach is documented.
 
-## Dependencies
+### Dependencies
 
 * EPIC-05 — Backend API Foundation
 
 ---
 
-# EPIC-10 — Local Development & Quality Checks
+## EPIC-10 — Local Development & Quality Checks
 
-## Goal
+### Goal
 
 Make the project easy to run and verify locally.
 
-## User Story
+### User Story
 
 As a developer, I want clear local development instructions, so that I can run the project and validate changes quickly.
 
-## Technical Tasks
+### Technical Tasks
 
 | Task ID      | Task                                | Priority |
 | ------------ | ----------------------------------- | -------- |
@@ -674,7 +674,7 @@ As a developer, I want clear local development instructions, so that I can run t
 | MVP0-DEV-005 | Add basic lint/format command notes | Medium   |
 | MVP0-DEV-006 | Add troubleshooting section         | Low      |
 
-## Acceptance Criteria
+### Acceptance Criteria
 
 * Developer can run frontend locally.
 * Developer can run backend locally.
@@ -682,14 +682,14 @@ As a developer, I want clear local development instructions, so that I can run t
 * Required environment variables are documented.
 * Common local setup issues are documented.
 
-## Dependencies
+### Dependencies
 
 * EPIC-02 — Frontend Application Foundation
 * EPIC-05 — Backend API Foundation
 
 ---
 
-# MVP 0 Delivery Checklist
+## MVP 0 Delivery Checklist
 
 MVP 0 can be considered complete when:
 
@@ -711,7 +711,7 @@ MVP 0 can be considered complete when:
 
 ---
 
-# Suggested Implementation Order
+## Suggested Implementation Order
 
 Recommended order of implementation:
 
@@ -728,7 +728,7 @@ Recommended order of implementation:
 
 ---
 
-# Suggested GitHub Issue Labels
+## Suggested GitHub Issue Labels
 
 Suggested labels for GitHub Issues:
 
@@ -751,6 +751,6 @@ status: blocked
 
 ---
 
-# Next Step
+## Next Step
 
 After this backlog is accepted, the next step is to create GitHub Issues for MVP 0 or prepare a more detailed implementation plan for the first frontend and backend tasks.
