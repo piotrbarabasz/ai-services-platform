@@ -88,35 +88,167 @@ This plan does not include:
 
 ## 5. Proposed Issues Summary
 
-| Order | Issue ID | Title | Group | Priority | Milestone | Dependencies |
-|---|---|---|---|---|---|---|
-| 1 | MVP0-ISSUE-001 | Finalize MVP 0 documentation baseline | Documentation cleanup | High | MVP 0 - Planning Ready | None |
-| 2 | MVP0-ISSUE-002 | Update README and documentation navigation for MVP 0 | README and navigation | High | MVP 0 - Planning Ready | MVP0-ISSUE-001 |
-| 3 | MVP0-ISSUE-003 | Write required MVP 0 ADRs before implementation | Documentation cleanup | High | MVP 0 - Planning Ready | MVP0-ISSUE-001 |
-| 4 | MVP0-ISSUE-004 | Create frontend application skeleton | Frontend skeleton | High | MVP 0 - App Skeleton | MVP0-ISSUE-003 |
-| 5 | MVP0-ISSUE-005 | Configure frontend routing and base layout | Frontend skeleton | High | MVP 0 - App Skeleton | MVP0-ISSUE-004 |
-| 6 | MVP0-ISSUE-006 | Add shared frontend components and responsive foundation | Frontend skeleton | Medium | MVP 0 - App Skeleton | MVP0-ISSUE-005 |
-| 7 | MVP0-ISSUE-007 | Implement landing page hero and primary CTA | Landing page sections | High | MVP 0 - Landing Page | MVP0-ISSUE-006 |
-| 8 | MVP0-ISSUE-008 | Implement services, examples and benefits sections | Landing page sections | High | MVP 0 - Landing Page | MVP0-ISSUE-006 |
-| 9 | MVP0-ISSUE-009 | Implement process, FAQ and footer sections | Landing page sections | Medium | MVP 0 - Landing Page | MVP0-ISSUE-006 |
-| 10 | MVP0-ISSUE-010 | Create contact form UI fields and validation | Contact form UI | High | MVP 0 - Contact Flow | MVP0-ISSUE-006 |
-| 11 | MVP0-ISSUE-011 | Add contact form loading, success and error states | Contact form UI | High | MVP 0 - Contact Flow | MVP0-ISSUE-010 |
-| 12 | MVP0-ISSUE-012 | Connect contact form UI to backend API client | Contact form UI | High | MVP 0 - Contact Flow | MVP0-ISSUE-011, MVP0-ISSUE-018 |
-| 13 | MVP0-ISSUE-013 | Create backend application skeleton | Backend skeleton | High | MVP 0 - App Skeleton | MVP0-ISSUE-003 |
-| 14 | MVP0-ISSUE-014 | Add backend configuration and CORS foundation | Backend skeleton | High | MVP 0 - App Skeleton | MVP0-ISSUE-013 |
-| 15 | MVP0-ISSUE-015 | Implement backend health endpoint | Health endpoint | High | MVP 0 - App Skeleton | MVP0-ISSUE-013 |
-| 16 | MVP0-ISSUE-016 | Define contact request validation models | Contact endpoint | High | MVP 0 - Contact Flow | MVP0-ISSUE-014 |
-| 17 | MVP0-ISSUE-017 | Define lead model and lead service | Lead model | High | MVP 0 - Contact Flow | MVP0-ISSUE-016 |
-| 18 | MVP0-ISSUE-018 | Implement backend contact endpoint | Contact endpoint | High | MVP 0 - Contact Flow | MVP0-ISSUE-016, MVP0-ISSUE-017 |
-| 19 | MVP0-ISSUE-019 | Add backend tests for health and contact endpoints | Backend skeleton | Medium | MVP 0 - Contact Flow | MVP0-ISSUE-015, MVP0-ISSUE-018 |
-| 20 | MVP0-ISSUE-020 | Add environment examples and secret safeguards | Privacy and SEO | High | MVP 0 - Deployment Prep | MVP0-ISSUE-014 |
-| 21 | MVP0-ISSUE-021 | Add privacy page and contact consent copy | Privacy and SEO | High | MVP 0 - Release Candidate | MVP0-ISSUE-005, MVP0-ISSUE-010 |
-| 22 | MVP0-ISSUE-022 | Add basic SEO metadata and semantic headings | Privacy and SEO | Medium | MVP 0 - Release Candidate | MVP0-ISSUE-007, MVP0-ISSUE-008, MVP0-ISSUE-009 |
-| 23 | MVP0-ISSUE-023 | Prepare backend containerization for Cloud Run | GCP deployment preparation | High | MVP 0 - Deployment Prep | MVP0-ISSUE-013, MVP0-ISSUE-015 |
-| 24 | MVP0-ISSUE-024 | Document manual GCP deployment checklist | GCP deployment preparation | Medium | MVP 0 - Deployment Prep | MVP0-ISSUE-020, MVP0-ISSUE-023 |
-| 25 | MVP0-ISSUE-025 | Update local development and validation docs | Local development docs | High | MVP 0 - Release Candidate | MVP0-ISSUE-004, MVP0-ISSUE-013 |
-| 26 | MVP0-ISSUE-026 | Add basic logging and personal data logging rules | Backend skeleton | Medium | MVP 0 - Contact Flow | MVP0-ISSUE-014, MVP0-ISSUE-018 |
-| 27 | MVP0-ISSUE-027 | Add MVP 0 final validation checklist | Documentation cleanup | Medium | MVP 0 - Release Candidate | MVP0-ISSUE-012, MVP0-ISSUE-019, MVP0-ISSUE-024, MVP0-ISSUE-025 |
+1. **MVP0-ISSUE-001 - Finalize MVP 0 documentation baseline**
+   - Group: Documentation cleanup
+   - Priority: High
+   - Milestone: MVP 0 - Planning Ready
+   - Dependencies: None
+
+2. **MVP0-ISSUE-002 - Update README and documentation navigation for MVP 0**
+   - Group: README and navigation
+   - Priority: High
+   - Milestone: MVP 0 - Planning Ready
+   - Dependencies: MVP0-ISSUE-001
+
+3. **MVP0-ISSUE-003 - Write required MVP 0 ADRs before implementation**
+   - Group: Documentation cleanup
+   - Priority: High
+   - Milestone: MVP 0 - Planning Ready
+   - Dependencies: MVP0-ISSUE-001
+
+4. **MVP0-ISSUE-004 - Create frontend application skeleton**
+   - Group: Frontend skeleton
+   - Priority: High
+   - Milestone: MVP 0 - App Skeleton
+   - Dependencies: MVP0-ISSUE-003
+
+5. **MVP0-ISSUE-005 - Configure frontend routing and base layout**
+   - Group: Frontend skeleton
+   - Priority: High
+   - Milestone: MVP 0 - App Skeleton
+   - Dependencies: MVP0-ISSUE-004
+
+6. **MVP0-ISSUE-006 - Add shared frontend components and responsive foundation**
+   - Group: Frontend skeleton
+   - Priority: Medium
+   - Milestone: MVP 0 - App Skeleton
+   - Dependencies: MVP0-ISSUE-005
+
+7. **MVP0-ISSUE-007 - Implement landing page hero and primary CTA**
+   - Group: Landing page sections
+   - Priority: High
+   - Milestone: MVP 0 - Landing Page
+   - Dependencies: MVP0-ISSUE-006
+
+8. **MVP0-ISSUE-008 - Implement services, examples and benefits sections**
+   - Group: Landing page sections
+   - Priority: High
+   - Milestone: MVP 0 - Landing Page
+   - Dependencies: MVP0-ISSUE-006
+
+9. **MVP0-ISSUE-009 - Implement process, FAQ and footer sections**
+   - Group: Landing page sections
+   - Priority: Medium
+   - Milestone: MVP 0 - Landing Page
+   - Dependencies: MVP0-ISSUE-006
+
+10. **MVP0-ISSUE-010 - Create contact form UI fields and validation**
+    - Group: Contact form UI
+    - Priority: High
+    - Milestone: MVP 0 - Contact Flow
+    - Dependencies: MVP0-ISSUE-006
+
+11. **MVP0-ISSUE-011 - Add contact form loading, success and error states**
+    - Group: Contact form UI
+    - Priority: High
+    - Milestone: MVP 0 - Contact Flow
+    - Dependencies: MVP0-ISSUE-010
+
+12. **MVP0-ISSUE-012 - Connect contact form UI to backend API client**
+    - Group: Contact form UI
+    - Priority: High
+    - Milestone: MVP 0 - Contact Flow
+    - Dependencies: MVP0-ISSUE-011, MVP0-ISSUE-018
+
+13. **MVP0-ISSUE-013 - Create backend application skeleton**
+    - Group: Backend skeleton
+    - Priority: High
+    - Milestone: MVP 0 - App Skeleton
+    - Dependencies: MVP0-ISSUE-003
+
+14. **MVP0-ISSUE-014 - Add backend configuration and CORS foundation**
+    - Group: Backend skeleton
+    - Priority: High
+    - Milestone: MVP 0 - App Skeleton
+    - Dependencies: MVP0-ISSUE-013
+
+15. **MVP0-ISSUE-015 - Implement backend health endpoint**
+    - Group: Health endpoint
+    - Priority: High
+    - Milestone: MVP 0 - App Skeleton
+    - Dependencies: MVP0-ISSUE-013
+
+16. **MVP0-ISSUE-016 - Define contact request validation models**
+    - Group: Contact endpoint
+    - Priority: High
+    - Milestone: MVP 0 - Contact Flow
+    - Dependencies: MVP0-ISSUE-014
+
+17. **MVP0-ISSUE-017 - Define lead model and lead service**
+    - Group: Lead model
+    - Priority: High
+    - Milestone: MVP 0 - Contact Flow
+    - Dependencies: MVP0-ISSUE-016
+
+18. **MVP0-ISSUE-018 - Implement backend contact endpoint**
+    - Group: Contact endpoint
+    - Priority: High
+    - Milestone: MVP 0 - Contact Flow
+    - Dependencies: MVP0-ISSUE-016, MVP0-ISSUE-017
+
+19. **MVP0-ISSUE-019 - Add backend tests for health and contact endpoints**
+    - Group: Backend skeleton
+    - Priority: Medium
+    - Milestone: MVP 0 - Contact Flow
+    - Dependencies: MVP0-ISSUE-015, MVP0-ISSUE-018
+
+20. **MVP0-ISSUE-020 - Add environment examples and secret safeguards**
+    - Group: Privacy and SEO
+    - Priority: High
+    - Milestone: MVP 0 - Deployment Prep
+    - Dependencies: MVP0-ISSUE-014
+
+21. **MVP0-ISSUE-021 - Add privacy page and contact consent copy**
+    - Group: Privacy and SEO
+    - Priority: High
+    - Milestone: MVP 0 - Release Candidate
+    - Dependencies: MVP0-ISSUE-005, MVP0-ISSUE-010
+
+22. **MVP0-ISSUE-022 - Add basic SEO metadata and semantic headings**
+    - Group: Privacy and SEO
+    - Priority: Medium
+    - Milestone: MVP 0 - Release Candidate
+    - Dependencies: MVP0-ISSUE-007, MVP0-ISSUE-008, MVP0-ISSUE-009
+
+23. **MVP0-ISSUE-023 - Prepare backend containerization for Cloud Run**
+    - Group: GCP deployment preparation
+    - Priority: High
+    - Milestone: MVP 0 - Deployment Prep
+    - Dependencies: MVP0-ISSUE-013, MVP0-ISSUE-015
+
+24. **MVP0-ISSUE-024 - Document manual GCP deployment checklist**
+    - Group: GCP deployment preparation
+    - Priority: Medium
+    - Milestone: MVP 0 - Deployment Prep
+    - Dependencies: MVP0-ISSUE-020, MVP0-ISSUE-023
+
+25. **MVP0-ISSUE-025 - Update local development and validation docs**
+    - Group: Local development docs
+    - Priority: High
+    - Milestone: MVP 0 - Release Candidate
+    - Dependencies: MVP0-ISSUE-004, MVP0-ISSUE-013
+
+26. **MVP0-ISSUE-026 - Add basic logging and personal data logging rules**
+    - Group: Backend skeleton
+    - Priority: Medium
+    - Milestone: MVP 0 - Contact Flow
+    - Dependencies: MVP0-ISSUE-014, MVP0-ISSUE-018
+
+27. **MVP0-ISSUE-027 - Add MVP 0 final validation checklist**
+    - Group: Documentation cleanup
+    - Priority: Medium
+    - Milestone: MVP 0 - Release Candidate
+    - Dependencies: MVP0-ISSUE-012, MVP0-ISSUE-019, MVP0-ISSUE-024, MVP0-ISSUE-025
 
 ---
 
@@ -162,7 +294,8 @@ Make sure repository and documentation navigation points to the MVP 0 source-of-
 ### MVP0-ISSUE-003 - Write required MVP 0 ADRs before implementation
 
 **Description:**  
-Write the highest-priority ADRs needed before implementation, including frontend framework, backend framework, environment configuration, secret management and initial lead storage.
+Write the highest-priority ADRs needed before implementation, including frontend framework,
+backend framework, environment configuration, secret management and initial lead storage.
 
 **Suggested labels:** `mvp: 0`, `type: docs`, `epic: docs`, `priority: high`, `status: ready`
 
@@ -586,7 +719,8 @@ Update local development documentation after frontend and backend skeletons exis
 **Description:**  
 Add backend logging for MVP 0 and document what must not be logged.
 
-**Suggested labels:** `mvp: 0`, `type: backend`, `type: security`, `type: operations`, `epic: security`, `priority: medium`, `status: blocked`
+**Suggested labels:** `mvp: 0`, `type: backend`, `type: security`, `type: operations`,
+`epic: security`, `priority: medium`, `status: blocked`
 
 **Acceptance criteria:**
 
@@ -643,4 +777,3 @@ When creating issues manually:
 - add dependencies in the issue body,
 - keep MVP 1 and later-MVP work out of MVP 0 issues,
 - mark blocked issues as blocked until their dependencies are complete.
-

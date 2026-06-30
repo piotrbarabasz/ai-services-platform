@@ -6,15 +6,29 @@ This file indexes reusable Codex prompts for the AI Services Platform repository
 
 Use these prompts to keep planning, documentation and implementation work small, reviewable and aligned with the MVP scope.
 
+This file is the prompt index. The reusable prompt files currently start at `01-`.
+
 ---
 
 ## Prompt Metadata
 
-| Prompt | Group | Documentation-Only | Can Edit Files | When to Use |
-|---|---|---|---|---|
-| [01-plan-mvp-0-foundation.md](01-plan-mvp-0-foundation.md) | Planning | Yes | No | Before implementing MVP 0 foundation work |
-| [02-implement-readme.md](02-implement-readme.md) | Documentation | Yes | Yes | To create or update the root `README.md` after the MVP 0 plan is reviewed |
-| [03-plan-backend-foundation.md](03-plan-backend-foundation.md) | Planning | Yes | No | Before implementing the MVP 0 backend foundation |
+- **[01-plan-mvp-0-foundation.md](01-plan-mvp-0-foundation.md)**
+  - Group: Planning
+  - Documentation-only: Yes
+  - Can edit files: No
+  - When to use: Before implementing MVP 0 foundation work
+
+- **[02-implement-readme.md](02-implement-readme.md)**
+  - Group: Documentation
+  - Documentation-only: Yes
+  - Can edit files: Yes
+  - When to use: To create or update the root `README.md` after the MVP 0 plan is reviewed
+
+- **[03-plan-backend-foundation.md](03-plan-backend-foundation.md)**
+  - Group: Planning
+  - Documentation-only: Yes
+  - Can edit files: No
+  - When to use: Before implementing the MVP 0 backend foundation
 
 ---
 
@@ -26,7 +40,8 @@ Use this prompt to analyze the repository and prepare an MVP 0 implementation pl
 
 - Documentation-only: Yes
 - Can edit files: No
-- Scope: MVP 0 planning for repository structure, README, frontend foundation, backend foundation, contact form, lead capture, local development and GCP deployment preparation
+- Scope: MVP 0 planning for repository structure, README, frontend foundation, backend foundation,
+  contact form, lead capture, local development and GCP deployment preparation
 
 ### [03-plan-backend-foundation.md](03-plan-backend-foundation.md)
 

@@ -4,7 +4,8 @@
 
 This document describes the planned MVP 1 architecture for the AI chatbot demo.
 
-It supports the [MVP 1 requirements](../requirements/02-mvp-1-chatbot-demo.md) and the [MVP 1 implementation backlog](../backlog/02-mvp-1-implementation-backlog.md).
+It supports the [MVP 1 requirements](../requirements/02-mvp-1-chatbot-demo.md)
+and the [MVP 1 implementation backlog](../backlog/02-mvp-1-implementation-backlog.md).
 
 ---
 
@@ -71,16 +72,45 @@ Website Chatbot Widget
 
 ## 4. Components
 
-| Component | Responsibility | Notes |
-|---|---|---|
-| Chatbot widget | Presents the chat UI and sends messages to the backend. | Must not contain API keys, provider credentials or system prompts. |
-| `/api/chat` endpoint | Validates requests and returns structured chat responses. | Should expose only the application contract, not provider details. |
-| Chat service | Coordinates validation, prompt building, session context and provider calls. | Keeps endpoint code small and testable. |
-| LLM provider adapter | Translates internal chat requests into provider-specific requests. | Allows provider changes without changing the widget. |
-| Prompt builder | Combines the server-side system prompt with bounded session context. | Keeps guardrails server-side. |
-| Session context handler | Limits conversation history used in a request. | MVP 1 context is session-level only. |
-| Logging and cost controls | Records operational metadata and enforces limits. | Supports abuse prevention and cost review. |
-| Secret configuration | Stores LLM credentials outside source control. | Use backend environment variables or cloud secret storage. |
+### Chatbot widget
+
+- Responsibility: Presents the chat UI and sends messages to the backend.
+- Notes: Must not contain API keys, provider credentials or system prompts.
+
+### `/api/chat` endpoint
+
+- Responsibility: Validates requests and returns structured chat responses.
+- Notes: Should expose only the application contract, not provider details.
+
+### Chat service
+
+- Responsibility: Coordinates validation, prompt building, session context and provider calls.
+- Notes: Keeps endpoint code small and testable.
+
+### LLM provider adapter
+
+- Responsibility: Translates internal chat requests into provider-specific requests.
+- Notes: Allows provider changes without changing the widget.
+
+### Prompt builder
+
+- Responsibility: Combines the server-side system prompt with bounded session context.
+- Notes: Keeps guardrails server-side.
+
+### Session context handler
+
+- Responsibility: Limits conversation history used in a request.
+- Notes: MVP 1 context is session-level only.
+
+### Logging and cost controls
+
+- Responsibility: Records operational metadata and enforces limits.
+- Notes: Supports abuse prevention and cost review.
+
+### Secret configuration
+
+- Responsibility: Stores LLM credentials outside source control.
+- Notes: Use backend environment variables or cloud secret storage.
 
 ---
 
@@ -191,14 +221,12 @@ Persistent chat history and cross-session identity are outside MVP 1.
 
 The backend should handle:
 
-| Error Type | Expected Behavior |
-|---|---|
-| Invalid request | Return a clear validation error without calling the provider. |
-| Message too long | Reject the request and ask the user to shorten the message. |
-| Rate limit exceeded | Return a safe limit message and avoid provider calls. |
-| Provider timeout | Return a friendly temporary failure message. |
-| Provider error | Log operational metadata and return a safe generic error. |
-| Missing configuration | Fail closed and avoid exposing configuration details. |
+- **Invalid request:** Return a clear validation error without calling the provider.
+- **Message too long:** Reject the request and ask the user to shorten the message.
+- **Rate limit exceeded:** Return a safe limit message and avoid provider calls.
+- **Provider timeout:** Return a friendly temporary failure message.
+- **Provider error:** Log operational metadata and return a safe generic error.
+- **Missing configuration:** Fail closed and avoid exposing configuration details.
 
 The frontend should display friendly error text and allow the user to retry when appropriate.
 
@@ -216,7 +244,8 @@ MVP 1 logging should capture operational metadata, such as:
 - model identifier,
 - token or usage metadata when available.
 
-Logs should avoid storing full message content by default unless a documented debugging need exists. Sensitive personal data, credentials and secrets must not be logged.
+Logs should avoid storing full message content by default unless a documented debugging need exists.
+Sensitive personal data, credentials and secrets must not be logged.
 
 ---
 
@@ -263,4 +292,3 @@ The MVP 1 architecture is acceptable when:
 - cost limits are defined before production use,
 - logging supports debugging without exposing sensitive data,
 - MVP 1 exclusions remain unimplemented.
-

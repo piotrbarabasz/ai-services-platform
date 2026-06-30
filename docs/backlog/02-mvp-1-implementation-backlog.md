@@ -18,7 +18,8 @@ Source documents:
 
 MVP 1 adds a working AI chatbot demo to the public website.
 
-The chatbot should answer basic questions about the AI services offer, explain service categories, avoid making unsupported guarantees and encourage qualified visitors to use the contact form.
+The chatbot should answer basic questions about the AI services offer, explain service categories,
+avoid making unsupported guarantees and encourage qualified visitors to use the contact form.
 
 ---
 
@@ -58,13 +59,25 @@ MVP 1 does not include:
 
 ## 5. Epics
 
-| Epic ID | Name | Goal | Related Requirements |
-|---|---|---|---|
-| EPIC-07 | Chatbot Widget UI | Add a usable chatbot widget to the website. | CHAT-001, CHAT-008, CHAT-010 |
-| EPIC-08 | Chat API | Create a validated backend endpoint for chat requests. | API-006, API-007, API-011, API-012, API-013 |
-| EPIC-09 | LLM Provider Integration | Connect the backend to a configured model provider. | API-008, API-009, API-010, SEC-004 |
-| EPIC-10 | Chatbot Prompt & Guardrails | Define safe, scoped chatbot behavior. | CHAT-002, CHAT-003, CHAT-004, CHAT-005, CHAT-006, CHAT-007, CHAT-011, CHAT-012 |
-| EPIC-11 | Chatbot Logging & Cost Control | Limit abuse and track operational behavior. | OBS-003, OBS-004, COST-003, COST-004, COST-005 |
+- **EPIC-07 - Chatbot Widget UI**
+  - Goal: Add a usable chatbot widget to the website.
+  - Related requirements: CHAT-001, CHAT-008, CHAT-010
+
+- **EPIC-08 - Chat API**
+  - Goal: Create a validated backend endpoint for chat requests.
+  - Related requirements: API-006, API-007, API-011, API-012, API-013
+
+- **EPIC-09 - LLM Provider Integration**
+  - Goal: Connect the backend to a configured model provider.
+  - Related requirements: API-008, API-009, API-010, SEC-004
+
+- **EPIC-10 - Chatbot Prompt & Guardrails**
+  - Goal: Define safe, scoped chatbot behavior.
+  - Related requirements: CHAT-002, CHAT-003, CHAT-004, CHAT-005, CHAT-006, CHAT-007, CHAT-011, CHAT-012
+
+- **EPIC-11 - Chatbot Logging & Cost Control**
+  - Goal: Limit abuse and track operational behavior.
+  - Related requirements: OBS-003, OBS-004, COST-003, COST-004, COST-005
 
 ---
 
@@ -72,59 +85,137 @@ MVP 1 does not include:
 
 ### EPIC-07 - Chatbot Widget UI
 
-| Task | Description | Acceptance Criteria |
-|---|---|---|
-| Widget entry point | Add a visible chatbot entry point on the website. | Users can open and close the chatbot from the public website. |
-| Message layout | Render user and assistant messages clearly. | Chat history is readable on desktop and mobile. |
-| Input handling | Add a text input and submit action. | Empty messages cannot be submitted. |
-| Loading state | Show progress while a response is pending. | Users can tell when the chatbot is processing a message. |
-| Error state | Show a friendly error when the backend or provider fails. | Users are not shown raw provider errors or stack traces. |
-| Contact guidance | Include a route back to the contact form when appropriate. | The chatbot can encourage users to submit a contact request. |
-| Frontend secret safety | Ensure the widget calls only the backend API. | No LLM API keys, provider secrets or system prompts are present in frontend code. |
+- **Widget entry point**
+  - Description: Add a visible chatbot entry point on the website.
+  - Acceptance criteria: Users can open and close the chatbot from the public website.
+
+- **Message layout**
+  - Description: Render user and assistant messages clearly.
+  - Acceptance criteria: Chat history is readable on desktop and mobile.
+
+- **Input handling**
+  - Description: Add a text input and submit action.
+  - Acceptance criteria: Empty messages cannot be submitted.
+
+- **Loading state**
+  - Description: Show progress while a response is pending.
+  - Acceptance criteria: Users can tell when the chatbot is processing a message.
+
+- **Error state**
+  - Description: Show a friendly error when the backend or provider fails.
+  - Acceptance criteria: Users are not shown raw provider errors or stack traces.
+
+- **Contact guidance**
+  - Description: Include a route back to the contact form when appropriate.
+  - Acceptance criteria: The chatbot can encourage users to submit a contact request.
+
+- **Frontend secret safety**
+  - Description: Ensure the widget calls only the backend API.
+  - Acceptance criteria: No LLM API keys, provider secrets or system prompts are present in frontend code.
 
 ### EPIC-08 - Chat API
 
-| Task | Description | Acceptance Criteria |
-|---|---|---|
-| Request contract | Define the MVP 1 `/api/chat` request shape. | The endpoint accepts a user message and bounded session context. |
-| Response contract | Define structured success and error responses. | The frontend can handle success, validation errors and provider failures predictably. |
-| Validation | Validate message length and required fields. | Invalid payloads return clear 4xx responses. |
-| Service boundary | Route chat logic through a backend chat service. | Endpoint code does not directly contain provider-specific logic. |
-| Provider error handling | Convert provider errors to safe application errors. | Provider failures do not expose credentials or internal details. |
-| Endpoint tests | Add tests for success, validation and provider failure paths. | Core `/api/chat` behavior can be verified before release. |
+- **Request contract**
+  - Description: Define the MVP 1 `/api/chat` request shape.
+  - Acceptance criteria: The endpoint accepts a user message and bounded session context.
+
+- **Response contract**
+  - Description: Define structured success and error responses.
+  - Acceptance criteria: The frontend can handle success, validation errors and provider failures predictably.
+
+- **Validation**
+  - Description: Validate message length and required fields.
+  - Acceptance criteria: Invalid payloads return clear 4xx responses.
+
+- **Service boundary**
+  - Description: Route chat logic through a backend chat service.
+  - Acceptance criteria: Endpoint code does not directly contain provider-specific logic.
+
+- **Provider error handling**
+  - Description: Convert provider errors to safe application errors.
+  - Acceptance criteria: Provider failures do not expose credentials or internal details.
+
+- **Endpoint tests**
+  - Description: Add tests for success, validation and provider failure paths.
+  - Acceptance criteria: Core `/api/chat` behavior can be verified before release.
 
 ### EPIC-09 - LLM Provider Integration
 
-| Task | Description | Acceptance Criteria |
-|---|---|---|
-| Provider interface | Define an internal LLM service interface. | The chat service is not tightly coupled to one provider SDK. |
-| Provider adapter | Implement the first configured provider adapter. | The backend can request a model response through the adapter. |
-| Model configuration | Load provider and model settings from configuration. | Provider and model can be changed without frontend changes. |
-| Secret loading | Load API credentials from environment or secret storage. | API keys are not committed and are not exposed to the browser. |
-| Timeout behavior | Apply request timeout handling. | Slow provider calls fail gracefully. |
-| Usage metadata | Capture provider usage metadata when available. | Token or usage data can support basic cost tracking. |
+- **Provider interface**
+  - Description: Define an internal LLM service interface.
+  - Acceptance criteria: The chat service is not tightly coupled to one provider SDK.
+
+- **Provider adapter**
+  - Description: Implement the first configured provider adapter.
+  - Acceptance criteria: The backend can request a model response through the adapter.
+
+- **Model configuration**
+  - Description: Load provider and model settings from configuration.
+  - Acceptance criteria: Provider and model can be changed without frontend changes.
+
+- **Secret loading**
+  - Description: Load API credentials from environment or secret storage.
+  - Acceptance criteria: API keys are not committed and are not exposed to the browser.
+
+- **Timeout behavior**
+  - Description: Apply request timeout handling.
+  - Acceptance criteria: Slow provider calls fail gracefully.
+
+- **Usage metadata**
+  - Description: Capture provider usage metadata when available.
+  - Acceptance criteria: Token or usage data can support basic cost tracking.
 
 ### EPIC-10 - Chatbot Prompt & Guardrails
 
-| Task | Description | Acceptance Criteria |
-|---|---|---|
-| System prompt | Create a server-side system prompt for the AI services chatbot. | The prompt describes the offer and MVP 1 behavior boundaries. |
-| Service scope | Define which topics the chatbot should answer. | The chatbot focuses on AI services, chatbot demos and contact guidance. |
-| Pricing guardrails | Define rules for pricing questions. | The chatbot does not invent fixed prices or guarantee exact costs. |
-| Unsupported questions | Define behavior for unrelated or unsupported requests. | The chatbot politely declines or redirects out-of-scope questions. |
-| Safety guidance | Define unsafe, sensitive and privacy-related behavior. | The chatbot avoids requesting secrets, credentials or unnecessary personal data. |
-| Contact handoff | Define when the chatbot should suggest the contact form. | Qualified or detailed project questions are routed toward contact. |
+- **System prompt**
+  - Description: Create a server-side system prompt for the AI services chatbot.
+  - Acceptance criteria: The prompt describes the offer and MVP 1 behavior boundaries.
+
+- **Service scope**
+  - Description: Define which topics the chatbot should answer.
+  - Acceptance criteria: The chatbot focuses on AI services, chatbot demos and contact guidance.
+
+- **Pricing guardrails**
+  - Description: Define rules for pricing questions.
+  - Acceptance criteria: The chatbot does not invent fixed prices or guarantee exact costs.
+
+- **Unsupported questions**
+  - Description: Define behavior for unrelated or unsupported requests.
+  - Acceptance criteria: The chatbot politely declines or redirects out-of-scope questions.
+
+- **Safety guidance**
+  - Description: Define unsafe, sensitive and privacy-related behavior.
+  - Acceptance criteria: The chatbot avoids requesting secrets, credentials or unnecessary personal data.
+
+- **Contact handoff**
+  - Description: Define when the chatbot should suggest the contact form.
+  - Acceptance criteria: Qualified or detailed project questions are routed toward contact.
 
 ### EPIC-11 - Chatbot Logging & Cost Control
 
-| Task | Description | Acceptance Criteria |
-|---|---|---|
-| Request logging | Log chat request status and operational metadata. | Logs include status, timestamp and latency without unnecessary sensitive content. |
-| Message length limit | Enforce a maximum user message length. | Oversized messages are rejected before provider calls. |
-| Session message limit | Limit messages retained or accepted per session. | Long sessions cannot grow without bounds. |
-| Rate limiting | Add or prepare request rate limits. | Basic abuse and cost spikes can be controlled. |
-| Cost tracking | Record usage data when the provider returns it. | Usage data is available for cost monitoring where supported. |
-| Cost alerts plan | Document budget and usage alert expectations. | Operators know which cost signals should trigger review. |
+- **Request logging**
+  - Description: Log chat request status and operational metadata.
+  - Acceptance criteria: Logs include status, timestamp and latency without unnecessary sensitive content.
+
+- **Message length limit**
+  - Description: Enforce a maximum user message length.
+  - Acceptance criteria: Oversized messages are rejected before provider calls.
+
+- **Session message limit**
+  - Description: Limit messages retained or accepted per session.
+  - Acceptance criteria: Long sessions cannot grow without bounds.
+
+- **Rate limiting**
+  - Description: Add or prepare request rate limits.
+  - Acceptance criteria: Basic abuse and cost spikes can be controlled.
+
+- **Cost tracking**
+  - Description: Record usage data when the provider returns it.
+  - Acceptance criteria: Usage data is available for cost monitoring where supported.
+
+- **Cost alerts plan**
+  - Description: Document budget and usage alert expectations.
+  - Acceptance criteria: Operators know which cost signals should trigger review.
 
 ---
 
@@ -173,4 +264,3 @@ MVP 1 is ready when:
 6. Build the frontend chatbot widget against the backend contract.
 7. Verify error states, unsupported questions and pricing guardrails.
 8. Review MVP 1 exclusions before release.
-

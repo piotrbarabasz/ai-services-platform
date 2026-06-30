@@ -10,11 +10,14 @@ Start from the main [documentation index](../README.md) for broader project navi
 
 Related documents:
 
+- [Project overview](../00-overview.md)
 - [Requirements index](../requirements/00-requirements-index.md)
 - [MVP 0 requirements](../requirements/01-mvp-0-foundation-landing-page.md)
 - [MVP 1 requirements](../requirements/02-mvp-1-chatbot-demo.md)
 - [MVP 0 implementation backlog](01-mvp-0-implementation-backlog.md)
 - [MVP 1 implementation backlog](02-mvp-1-implementation-backlog.md)
+- [MVP 0 GitHub issues plan](03-mvp-0-github-issues-plan.md)
+- [ADR backlog](../decisions/00-adr-backlog.md)
 
 ---
 
@@ -39,6 +42,8 @@ Related documents:
 | EPIC-15 | Admin Panel | MVP 5 |
 | EPIC-16 | Voice Assistant | MVP 6 |
 | EPIC-17 | Production Monitoring & Hardening | MVP 7 |
+
+EPIC-12 and later are future planning placeholders. They are not current MVP 0 or MVP 1 implementation scope.
 
 ---
 
@@ -334,8 +339,12 @@ The first implementation focus should be:
 
 ---
 
-## 5. Next Step
+## 5. Current Backlog Documents
 
-The next step is to create a detailed implementation backlog for MVP 0 in:
+Use these current backlog documents for planning:
 
-[docs/backlog/01-mvp-0-implementation-backlog.md](01-mvp-0-implementation-backlog.md)
+- [MVP 0 implementation backlog](01-mvp-0-implementation-backlog.md)
+- [MVP 1 implementation backlog](02-mvp-1-implementation-backlog.md)
+- [MVP 0 GitHub issues plan](03-mvp-0-github-issues-plan.md)
+
+Do not create GitHub Issues directly from the MVP 0 issues plan without review.

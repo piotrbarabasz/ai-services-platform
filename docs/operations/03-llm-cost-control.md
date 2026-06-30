@@ -56,17 +56,36 @@ Model settings should be backend configuration, not frontend configuration.
 
 Expected configuration values may include:
 
-| Setting | Purpose | Secret |
-|---|---|---|
-| `LLM_PROVIDER` | Selects the configured provider. | No |
-| `LLM_MODEL` | Selects the model used by MVP 1. | No |
-| `LLM_API_KEY` | Authenticates with the provider. | Yes |
-| `LLM_REQUEST_TIMEOUT_SECONDS` | Limits how long provider calls can run. | No |
-| `LLM_MAX_INPUT_CHARS` | Limits user message size. | No |
-| `LLM_MAX_MESSAGES_PER_SESSION` | Limits session context growth. | No |
-| `LLM_RATE_LIMIT_PER_IP_PER_MINUTE` | Limits request volume from one source. | No |
+- `LLM_PROVIDER`
+  - Purpose: Selects the configured provider.
+  - Secret: No
 
-Real secret values must be stored in backend environment configuration or cloud secret storage. They must not be committed to the repository or exposed to frontend code.
+- `LLM_MODEL`
+  - Purpose: Selects the model used by MVP 1.
+  - Secret: No
+
+- `LLM_API_KEY`
+  - Purpose: Authenticates with the provider.
+  - Secret: Yes
+
+- `LLM_REQUEST_TIMEOUT_SECONDS`
+  - Purpose: Limits how long provider calls can run.
+  - Secret: No
+
+- `LLM_MAX_INPUT_CHARS`
+  - Purpose: Limits user message size.
+  - Secret: No
+
+- `LLM_MAX_MESSAGES_PER_SESSION`
+  - Purpose: Limits session context growth.
+  - Secret: No
+
+- `LLM_RATE_LIMIT_PER_IP_PER_MINUTE`
+  - Purpose: Limits request volume from one source.
+  - Secret: No
+
+Real secret values must be stored in backend environment configuration or cloud secret storage.
+They must not be committed to the repository or exposed to frontend code.
 
 ---
 
@@ -74,12 +93,21 @@ Real secret values must be stored in backend environment configuration or cloud 
 
 MVP 1 should define conservative limits before provider calls are enabled.
 
-| Limit | Reason | Expected Behavior |
-|---|---|---|
-| Maximum user message length | Prevents very large prompts and prompt stuffing. | Reject oversized messages before provider calls. |
-| Maximum messages per session | Prevents unbounded context growth. | Trim or stop accepting additional context. |
-| Maximum provider response size | Prevents unexpectedly long responses. | Configure provider response limits when supported. |
-| Request timeout | Prevents long-running provider calls. | Return a safe temporary failure message. |
+- **Maximum user message length**
+  - Reason: Prevents very large prompts and prompt stuffing.
+  - Expected behavior: Reject oversized messages before provider calls.
+
+- **Maximum messages per session**
+  - Reason: Prevents unbounded context growth.
+  - Expected behavior: Trim or stop accepting additional context.
+
+- **Maximum provider response size**
+  - Reason: Prevents unexpectedly long responses.
+  - Expected behavior: Configure provider response limits when supported.
+
+- **Request timeout**
+  - Reason: Prevents long-running provider calls.
+  - Expected behavior: Return a safe temporary failure message.
 
 The exact limit values should be chosen during implementation and documented before deployment.
 
@@ -197,4 +225,3 @@ LLM cost control is sufficient for MVP 1 when:
 - usage metadata is logged when available,
 - billing or usage alerts are documented,
 - future per-client cost controls remain outside MVP 1.
-

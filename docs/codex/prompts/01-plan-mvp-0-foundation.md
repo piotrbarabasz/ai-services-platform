@@ -25,7 +25,8 @@ Analyze the current repository and prepare an implementation plan for MVP 0.
 
 MVP 0 goal:
 
-Create the project foundation for a public AI services landing page with a contact form, backend API foundation, lead capture foundation, local development setup and initial GCP deployment preparation.
+Create the project foundation for a public AI services landing page with a contact form,
+backend API foundation, lead capture foundation, local development setup and initial GCP deployment preparation.
 
 Scope:
 
