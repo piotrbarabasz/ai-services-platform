@@ -25,13 +25,16 @@ Current MVP 0 backend status:
 - `GET /health` and `POST /api/contact` are implemented and covered by backend tests.
 - Contact submissions are handled through a lead service in log-only mode; no database or email notifications are implemented yet.
 - Backend Docker support exists for future Cloud Run deployment preparation.
+- Cloud Run deployment has not been executed.
 
 Current MVP 0 frontend status:
 
-- Vite, React and TypeScript skeleton exists in [`frontend/`](frontend/).
+- Vite, React and TypeScript frontend foundation exists in [`frontend/`](frontend/).
 - Routes `/` and `/privacy` are available locally.
-- Landing page sections, contact area and future chatbot area are placeholders.
-- Contact form submission, final privacy copy and SEO polish are still pending.
+- Landing page sections and future chatbot area are still placeholder-level.
+- Contact form submission to `POST /api/contact` is implemented with frontend validation and user-facing loading, success and error states.
+- The contact flow works locally when the backend runs on `http://localhost:8000` and the frontend runs on `http://localhost:4200`.
+- Final privacy copy, final landing content and SEO polish are still pending.
 
 ---
 

@@ -49,8 +49,8 @@ MVP 0 does not include:
 | WEB-002 | The landing page must include a hero section with a clear value proposition. |
 | WEB-003 | The website must include sections for services, examples, benefits, process, FAQ and contact. |
 | WEB-004 | The website must include a contact form. |
-| WEB-005 | The contact form must allow the user to provide name, email, company name, service type and message. |
-| WEB-006 | The contact form must validate required fields. |
+| WEB-005 | The contact form must allow the user to provide name, email, optional company name, optional phone, service type, message and consent. |
+| WEB-006 | The contact form must validate required fields and consent. |
 | WEB-007 | The user must see a success message after submitting the form. |
 | WEB-008 | The user must see an error message if form submission fails. |
 | WEB-009 | The website must include a privacy policy page. |
@@ -107,7 +107,28 @@ MVP 0 is considered complete when:
 
 ---
 
-## 8. Risks
+## 8. Current Implementation Status
+
+Current MVP 0 implementation status:
+
+- backend foundation is implemented with `GET /health` and `POST /api/contact`,
+- backend validation covers required contact fields, email format and consent,
+- accepted contact submissions are converted into log-only lead records,
+- frontend foundation is implemented with routes `/` and `/privacy`,
+- frontend contact form submits to the backend using `VITE_API_BASE_URL`,
+- frontend validation, loading, success and error states are implemented.
+
+Still pending before MVP 0 can be considered complete:
+
+- final landing page content and styling,
+- final privacy policy copy,
+- SEO metadata polish,
+- durable lead storage or notification decision,
+- first GCP dev deployment.
+
+---
+
+## 9. Risks
 
 | Risk | Impact | Mitigation |
 |---|---|---|
@@ -119,7 +140,7 @@ MVP 0 is considered complete when:
 
 ---
 
-## 9. Final Deliverables
+## 10. Final Deliverables
 
 At the end of MVP 0, the project should include:
 
@@ -134,7 +155,7 @@ At the end of MVP 0, the project should include:
 
 ---
 
-## 10. Proposed Epics
+## 11. Proposed Epics
 
 | Epic | Name |
 |---|---|

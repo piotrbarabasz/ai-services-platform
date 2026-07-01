@@ -63,7 +63,7 @@ GCP-ready Runtime
 
 | Component | Responsibility | Current MVP 0 Status |
 |---|---|---|
-| Frontend Website | Public landing page and contact form | Skeleton implemented; final landing page and contact form pending |
+| Frontend Website | Public landing page and contact form | Foundation implemented; contact form connected to backend; final landing content and privacy copy pending |
 | Backend API | Health check and contact endpoint | Implemented |
 | Lead Service | Validate and process contact requests | Implemented with log-only handling |
 | Persistence Layer | Store leads or prepare future storage | Deferred; no database yet |
@@ -114,6 +114,10 @@ The frontend is responsible for:
 - showing success and error states,
 - linking to privacy information,
 - providing responsive layout.
+
+Current MVP 0 frontend implementation includes an active contact form that submits to
+`POST /api/contact` through a typed API client using `VITE_API_BASE_URL`. The landing page content
+and privacy page copy are still placeholder-level and need final review before public release.
 
 ### Frontend Restrictions
 
@@ -173,6 +177,9 @@ backend/
   Dockerfile
   .dockerignore
 ```
+
+The frontend implementation follows the same boundaries with top-level route, component, service
+and model folders under `frontend/src/`.
 
 ### Required Endpoints
 
@@ -269,6 +276,15 @@ ALLOWED_ORIGINS=http://localhost:4200
 LEAD_STORAGE_MODE=log
 ```
 
+Frontend runtime/build variable:
+
+```text
+VITE_API_BASE_URL=http://localhost:8000
+```
+
+`VITE_API_BASE_URL` is public frontend configuration and must not contain secrets. The backend
+`ALLOWED_ORIGINS` value must include the frontend origin that will submit contact requests.
+
 Future variables:
 
 ```text
@@ -334,6 +350,8 @@ MVP 0 should be prepared for this deployment direction:
 | Lead storage | Firestore or Cloud SQL in later MVP |
 
 The first deployment should stay minimal. Advanced infrastructure automation can be added later.
+The current MVP 0 contact flow works locally; Cloud Run and frontend production deployment have
+not been executed yet.
 
 ---
 

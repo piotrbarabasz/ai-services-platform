@@ -66,6 +66,13 @@ Expected response:
 }
 ```
 
+Current behavior:
+
+- required fields, email format and consent are validated by the backend,
+- accepted submissions are converted into internal lead objects,
+- lead handling currently uses `LEAD_STORAGE_MODE=log`,
+- no durable database storage or email notification is implemented yet.
+
 ## Docker
 
 Build the backend image from the backend directory:
@@ -112,3 +119,4 @@ LOG_LEVEL=INFO
 ```
 
 `ALLOWED_ORIGINS` accepts a comma-separated list of frontend origins for CORS.
+For local frontend contact form testing, keep `http://localhost:4200` in `ALLOWED_ORIGINS`.

@@ -4,8 +4,9 @@
 
 This document describes how to run the AI Services Platform locally during MVP 0 development.
 
-The MVP 0 backend exists and can be run locally. The frontend skeleton also exists.
-Full frontend contact form integration is still pending.
+The MVP 0 backend exists and can be run locally. The frontend foundation also exists.
+The frontend contact form submits to the backend `POST /api/contact` endpoint during local
+development.
 
 ---
 
@@ -52,17 +53,15 @@ frontend/
 
 ## 3. Required Tools
 
-The exact versions should be updated after the technology stack is finalized.
-
-Recommended tools:
+Current MVP 0 tools:
 
 | Tool | Purpose |
 |---|---|
 | Git | Version control |
-| Node.js | Frontend development |
-| npm or pnpm | Frontend package manager |
-| Python | Backend development |
-| pip or poetry | Backend dependency management |
+| Node.js | Frontend development with Vite and React |
+| npm | Frontend package manager |
+| Python 3.12 or compatible Python 3 | Backend development with FastAPI |
+| pip | Backend dependency management |
 | Docker Desktop | Local container testing |
 | Google Cloud CLI | Future GCP deployment |
 
@@ -88,6 +87,7 @@ BACKEND_PORT=8000
 FRONTEND_URL=http://localhost:4200
 ALLOWED_ORIGINS=http://localhost:4200
 LEAD_STORAGE_MODE=log
+LOG_LEVEL=INFO
 ```
 
 Example frontend variables:
@@ -96,7 +96,7 @@ Example frontend variables:
 VITE_API_BASE_URL=http://localhost:8000
 ```
 
-The actual variable names may change depending on the selected frontend framework.
+`VITE_API_BASE_URL` is frontend-visible configuration and must not contain secrets.
 
 ---
 
@@ -144,7 +144,7 @@ Expected result:
 - homepage route is available at `http://localhost:4200/`,
 - privacy route is available at `http://localhost:4200/privacy`,
 - API base URL is documented through `frontend/.env.example`,
-- contact form submission is not wired yet.
+- contact form submission calls `http://localhost:8000/api/contact` when `VITE_API_BASE_URL` uses the local backend URL.
 
 ---
 
@@ -156,9 +156,10 @@ Recommended local workflow:
 2. Verify `/health`.
 3. Start frontend app.
 4. Open landing page.
-5. Check the contact section placeholder.
-6. After contact form integration, submit a contact form and check backend logs.
-7. Run tests before commit.
+5. Fill and submit the contact form with valid data.
+6. Confirm the frontend success message and check backend logs for accepted contact request metadata.
+7. Test frontend validation with an invalid email and missing consent.
+8. Run validation commands before commit.
 
 ---
 
@@ -228,6 +229,7 @@ Current frontend validation command:
 
 ```cmd
 cd frontend
+npm run typecheck
 npm run build
 ```
 
@@ -249,10 +251,11 @@ Current frontend check:
 
 ```cmd
 cd frontend
+npm run typecheck
 npm run build
 ```
 
-Linting and formatting scripts should be added when the frontend implementation grows beyond the skeleton.
+Linting and formatting scripts should be added when the frontend implementation grows enough to justify extra tooling.
 
 ---
 

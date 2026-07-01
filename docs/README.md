@@ -26,9 +26,11 @@ Current implementation snapshot:
 - Backend endpoints available locally: `GET /health` and `POST /api/contact`.
 - Lead handling is log-only for now; durable storage and email notifications are not implemented.
 - Backend Docker support exists for future Cloud Run deployment preparation.
-- MVP 0 frontend skeleton exists with Vite, React and TypeScript.
-- Frontend routes `/` and `/privacy` are available locally with placeholder sections.
-- Contact form submission, final frontend content, SEO polish and production deployment are still pending.
+- MVP 0 frontend foundation exists with Vite, React and TypeScript.
+- Frontend routes `/` and `/privacy` are available locally.
+- Contact form submission to `POST /api/contact` is implemented with frontend validation and user-facing loading, success and error states.
+- The local end-to-end contact flow works when the frontend uses `VITE_API_BASE_URL=http://localhost:8000`.
+- Final landing content, final privacy copy, SEO polish and production deployment are still pending.
 
 ---
 

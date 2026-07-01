@@ -88,40 +88,47 @@ Completed backend work:
 * Backend tests exist for health and contact endpoint behavior.
 * Backend Dockerfile and `.dockerignore` exist for Cloud Run preparation.
 
-Still pending:
+Backend follow-ups:
 
-* final landing page content and styling,
-* active contact form UI with frontend validation and backend submission,
-* final privacy policy copy and SEO basics,
 * durable lead storage,
 * email notifications,
-* production Cloud Run deployment,
 * final custom API error response format.
+
+Other MVP 0 work still pending:
+
+* final landing page content and styling,
+* final privacy policy copy and SEO basics,
+* production Cloud Run deployment.
 
 ---
 
-## 6. Current Frontend Skeleton Status
+## 6. Current Frontend Implementation Status
 
-The MVP 0 frontend application skeleton has been created.
+The MVP 0 frontend foundation has been created and the contact form is connected to the backend.
 
-Completed frontend skeleton work:
+Completed frontend work:
 
 * `frontend/` exists.
 * Vite, React and TypeScript are configured.
 * Local dev server is configured for `http://localhost:4200`.
 * `/` route exists with placeholder landing sections.
 * `/privacy` route exists with placeholder privacy content.
-* Contact area exists as a placeholder and does not submit to the backend yet.
+* Contact form UI exists with frontend validation for required fields, email and consent.
+* Contact form submits to the backend `POST /api/contact` endpoint using `VITE_API_BASE_URL`.
+* Contact form shows loading, success and user-friendly error states.
+* Duplicate submissions are prevented while a request is pending.
+* Consent copy links to the privacy page.
 * Future chatbot demo area exists as a placeholder only.
 * Frontend environment example exists.
+* Frontend quality commands exist for TypeScript checking and production build validation.
 
 Still pending:
 
 * final landing page implementation,
-* active contact form component,
-* frontend validation and `/api/contact` integration,
 * final privacy policy text,
-* SEO basics and production frontend deployment.
+* SEO basics,
+* production frontend deployment,
+* frontend test/lint tooling if later justified.
 
 ---
 
@@ -800,12 +807,15 @@ MVP 0 can be considered complete when:
 * [x] Documentation foundation exists.
 * [x] Frontend application exists.
 * [ ] Landing page is implemented.
-* [ ] Contact form UI is implemented.
+* [x] Contact form UI is implemented.
 * [x] Backend application exists.
 * [x] `/health` endpoint works.
 * [x] `/api/contact` endpoint works.
 * [x] Contact payload validation works.
 * [x] Lead handling service exists.
+* [x] Frontend contact form submits to `/api/contact` locally.
+* [x] Frontend validation, loading, success and error states exist.
+* [x] Privacy route placeholder exists.
 * [ ] Privacy policy page exists with final approved copy.
 * [ ] SEO basics are configured.
 * [x] Secrets are not committed.

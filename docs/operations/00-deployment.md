@@ -88,6 +88,7 @@ Required endpoint:
 
 ```text
 GET /health
+POST /api/contact
 ```
 
 The backend should listen on the port provided by the environment.
@@ -99,7 +100,9 @@ Current status:
 - backend Dockerfile exists,
 - backend `.dockerignore` exists,
 - backend `/health` endpoint exists,
+- backend `/api/contact` endpoint exists,
 - local Docker commands are documented,
+- local frontend-to-backend contact form submission works,
 - Cloud Run deployment has not been executed.
 
 ---
@@ -142,17 +145,29 @@ curl.exe http://localhost:8000/health
 
 ## 8. Environment Variables
 
-Suggested backend variables:
+Suggested backend variables for a dev deployment:
 
 ```text
-APP_ENV=prod
+APP_ENV=dev
 APP_NAME=ai-services-platform
-PORT=8000
 FRONTEND_URL=https://example.com
 ALLOWED_ORIGINS=https://example.com
 LEAD_STORAGE_MODE=log
 LOG_LEVEL=INFO
 ```
+
+Use `APP_ENV=prod` only for a later production deployment.
+
+Cloud Run provides the container `PORT` value. The backend Dockerfile uses `${PORT:-8000}` so local
+container runs can still set `PORT=8000`.
+
+Frontend deployment variable:
+
+```text
+VITE_API_BASE_URL=https://YOUR_BACKEND_URL
+```
+
+This is public frontend configuration and must not contain secrets.
 
 Future variables:
 
@@ -249,6 +264,15 @@ Options:
 
 The final frontend hosting decision should be documented as an ADR.
 
+The deployed frontend contact form must receive a non-secret API base URL configuration:
+
+```text
+VITE_API_BASE_URL=https://YOUR_BACKEND_URL
+```
+
+The backend `ALLOWED_ORIGINS` setting must include the deployed frontend origin so the browser can
+submit contact requests to `POST /api/contact`. This has not been configured for production yet.
+
 ---
 
 ## 13. Rollback Strategy
@@ -276,6 +300,7 @@ After deployment, verify:
 - frontend loads,
 - backend `/health` returns success,
 - contact form can call backend,
+- direct `POST /api/contact` validation works for valid and invalid payloads,
 - backend logs are visible,
 - errors are visible in Cloud Logging,
 - Cloud Run service has reasonable min/max instance settings,

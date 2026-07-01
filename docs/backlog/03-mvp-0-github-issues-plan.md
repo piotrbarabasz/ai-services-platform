@@ -48,7 +48,7 @@ This plan does not include:
 
 ## 2.1 Current Repository Status Note
 
-As of the current backend implementation, the repository already includes:
+As of the current MVP 0 contact flow implementation, the repository already includes:
 
 - backend FastAPI application skeleton,
 - backend configuration and CORS foundation,
@@ -57,10 +57,20 @@ As of the current backend implementation, the repository already includes:
 - contact request validation models,
 - internal lead model and log-only lead service,
 - backend tests for health and contact endpoints,
-- backend Dockerfile and `.dockerignore`.
+- backend Dockerfile and `.dockerignore`,
+- frontend Vite, React and TypeScript foundation,
+- frontend routes `/` and `/privacy`,
+- active contact form UI with frontend validation, consent handling and loading/success/error states,
+- frontend API client submission to backend `POST /api/contact`,
+- frontend TypeScript and build validation commands.
 
-If GitHub Issues are created from this plan later, adjust the backend-related issues instead of
-creating duplicate work items for completed backend tasks.
+If GitHub Issues are created from this plan later, adjust the completed backend and contact-flow
+issues instead of creating duplicate work items. Landing page content, final privacy copy, SEO,
+production deployment and durable lead storage still need separate follow-up work.
+
+Completed or partially completed issue candidates include the frontend skeleton, contact form,
+backend skeleton, health endpoint, contact endpoint, backend tests, environment examples,
+containerization and local development documentation. Review each issue before opening it.
 
 ---
 

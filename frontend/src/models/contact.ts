@@ -1,10 +1,11 @@
 export type ContactServiceType =
-  | "ai_website"
-  | "website_chatbot"
-  | "lead_automation"
-  | "email_automation"
-  | "support_automation"
-  | "other";
+  | "Website with AI chatbot"
+  | "Email automation"
+  | "Lead handling automation"
+  | "Customer support chatbot"
+  | "Voice assistant"
+  | "Not sure yet"
+  | "Other";
 
 export interface ContactRequest {
   name: string;
@@ -14,4 +15,9 @@ export interface ContactRequest {
   serviceType: ContactServiceType;
   message: string;
   consent: boolean;
+}
+
+export interface ContactResponse {
+  status: "success";
+  message: string;
 }

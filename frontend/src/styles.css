@@ -217,7 +217,7 @@ p {
 }
 
 .hero-panel,
-.contact-placeholder,
+.contact-form,
 .info-card,
 .policy-block {
   border: 1px solid var(--line);
@@ -357,7 +357,7 @@ details p {
   background: #ffffff;
 }
 
-.contact-placeholder {
+.contact-form {
   display: grid;
   gap: 1rem;
   padding: 1.25rem;
@@ -376,6 +376,11 @@ label {
   font-weight: 800;
 }
 
+.form-field {
+  display: grid;
+  gap: 0.45rem;
+}
+
 input,
 select,
 textarea {
@@ -391,15 +396,57 @@ textarea {
   resize: vertical;
 }
 
+input[aria-invalid="true"],
+select[aria-invalid="true"],
+textarea[aria-invalid="true"] {
+  border-color: #b91c1c;
+  background: #fff7f7;
+}
+
+.field-error {
+  margin: 0;
+  color: #b91c1c;
+  font-size: 0.88rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
 .consent-row {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 0.7rem;
   font-weight: 700;
+  line-height: 1.5;
 }
 
 .consent-row input {
+  flex: 0 0 auto;
+  margin-top: 0.25rem;
   width: auto;
+}
+
+.consent-row a {
+  color: var(--primary-strong);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.form-status {
+  border-radius: 8px;
+  margin: 0;
+  padding: 0.85rem 1rem;
+  font-weight: 800;
+  line-height: 1.5;
+}
+
+.form-status-success {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.form-status-error {
+  background: #fee2e2;
+  color: #991b1b;
 }
 
 .page-section {
