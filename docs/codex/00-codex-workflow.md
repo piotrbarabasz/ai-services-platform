@@ -157,11 +157,9 @@ chore: add project tooling
 
 The next recommended Codex tasks are:
 
-1. Analyze repo and prepare MVP 0 implementation plan.
-2. Create initial `README.md`.
-3. Create backend FastAPI skeleton with `/health`.
-4. Create frontend application skeleton.
-5. Create landing page sections.
-6. Add contact form UI.
-7. Add `/api/contact` endpoint.
-8. Add local development instructions.
+1. Keep MVP 0 documentation aligned with the current local implementation.
+2. Implement the final custom backend API error response envelope.
+3. Create the contact form spam/rate limiting strategy ADR before public exposure.
+4. Finalize MVP 0 landing page content and styling.
+5. Replace placeholder privacy copy with approved legal/privacy content.
+6. Prepare and validate the first dev deployment without claiming production deployment is complete.
