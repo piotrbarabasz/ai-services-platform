@@ -24,14 +24,16 @@ Current implementation snapshot:
 
 - MVP 0 backend foundation is implemented with FastAPI.
 - Backend endpoints available locally: `GET /health` and `POST /api/contact`.
+- Backend contact payload validation covers required fields, email format, allowed service type values and consent.
 - Lead handling is log-only for now; durable storage and email notifications are not implemented.
+- A final custom API error response envelope is still pending; validation errors currently use FastAPI's default error response shape.
 - Backend Docker support exists for future Cloud Run deployment preparation.
 - MVP 0 frontend foundation exists with Vite, React and TypeScript.
 - Frontend routes `/` and `/privacy` are available locally.
 - Contact form submission to `POST /api/contact` is implemented with frontend validation and user-facing loading, success and error states.
 - The local end-to-end contact flow works when the frontend uses `VITE_API_BASE_URL=http://localhost:8000`.
 - The future chatbot area is placeholder-only; chatbot, LLM and RAG functionality are not implemented.
-- Final landing content, final legally reviewed privacy copy, spam protection, SEO polish and production deployment are still pending.
+- Final landing content, final legally reviewed privacy copy, spam/rate limiting strategy or implementation, SEO polish and production deployment are still pending.
 
 ---
 

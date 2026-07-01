@@ -1,16 +1,10 @@
 import { type ChangeEvent, type FormEvent, useState } from "react";
-import type { ContactRequest, ContactServiceType } from "../../models/contact";
+import {
+  CONTACT_SERVICE_TYPES,
+  type ContactRequest,
+  type ContactServiceType
+} from "../../models/contact";
 import { submitContactRequest } from "../../services/apiClient";
-
-const SERVICE_TYPE_OPTIONS: ContactServiceType[] = [
-  "Website with AI chatbot",
-  "Email automation",
-  "Lead handling automation",
-  "Customer support chatbot",
-  "Voice assistant",
-  "Not sure yet",
-  "Other"
-];
 
 const EMAIL_PATTERN = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
 
@@ -268,7 +262,7 @@ export function ContactSection() {
             }
           >
             <option value="">Select a service</option>
-            {SERVICE_TYPE_OPTIONS.map((serviceType) => (
+            {CONTACT_SERVICE_TYPES.map((serviceType) => (
               <option value={serviceType} key={serviceType}>
                 {serviceType}
               </option>

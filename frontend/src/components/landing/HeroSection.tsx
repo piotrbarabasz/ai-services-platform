@@ -22,7 +22,7 @@ export function HeroSection() {
           <div>
             <span className="status-pill">Backend ready</span>
             <strong>Health and contact API</strong>
-            <p>FastAPI foundation is available for the future form flow.</p>
+            <p>FastAPI receives validated contact requests from the MVP 0 form.</p>
           </div>
           <div>
             <span className="status-pill status-muted">Frontend skeleton</span>

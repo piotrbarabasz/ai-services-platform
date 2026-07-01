@@ -101,6 +101,7 @@ Current status:
 - backend `.dockerignore` exists,
 - backend `/health` endpoint exists,
 - backend `/api/contact` endpoint exists,
+- backend `/api/contact` validation includes required fields, email format, allowed service type values and consent,
 - local Docker commands are documented,
 - local frontend-to-backend contact form submission works,
 - Cloud Run deployment has not been executed.
@@ -300,7 +301,7 @@ After deployment, verify:
 - frontend loads,
 - backend `/health` returns success,
 - contact form can call backend,
-- direct `POST /api/contact` validation works for valid and invalid payloads,
+- direct `POST /api/contact` validation works for valid and invalid payloads, including unsupported `serviceType` values,
 - backend logs are visible,
 - errors are visible in Cloud Logging,
 - Cloud Run service has reasonable min/max instance settings,

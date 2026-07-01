@@ -23,7 +23,9 @@ Current MVP 0 backend status:
 
 - FastAPI backend exists in [`backend/`](backend/).
 - `GET /health` and `POST /api/contact` are implemented and covered by backend tests.
+- Contact payload validation covers required fields, email format, allowed service type values and consent.
 - Contact submissions are accepted by the backend and handled through a lead service in log-only mode; no database or email notifications are implemented yet.
+- A final custom API error response envelope is still pending; validation errors currently use FastAPI's default error response shape.
 - Backend Docker support exists for future Cloud Run deployment preparation.
 - Cloud Run deployment has not been executed.
 
@@ -35,7 +37,7 @@ Current MVP 0 frontend status:
 - Contact form submission to `POST /api/contact` is implemented with frontend validation and user-facing loading, success and error states.
 - The contact flow works locally when the backend runs on `http://localhost:8000` and the frontend runs on `http://localhost:4200`.
 - The future chatbot demo area is placeholder-only; no chatbot widget, LLM integration or RAG is implemented.
-- Final legally reviewed privacy copy, SEO polish, spam protection and production deployment are still pending.
+- Final legally reviewed privacy copy, SEO polish, spam/rate limiting strategy or implementation, and production deployment are still pending.
 
 ---
 

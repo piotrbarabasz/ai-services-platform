@@ -28,7 +28,7 @@ Run backend tests:
 
 ```cmd
 cd backend
-python -m pytest
+.\.venv\Scripts\python.exe -m pytest
 ```
 
 Expected result:
@@ -83,6 +83,18 @@ Verify backend validation rejects missing consent:
 
 ```cmd
 curl.exe -i -X POST http://localhost:8000/api/contact -H "Content-Type: application/json" -d "{\"name\":\"Smoke Test\",\"email\":\"smoke@example.com\",\"serviceType\":\"Lead handling automation\",\"message\":\"Smoke test contact request.\",\"consent\":false}"
+```
+
+Expected result:
+
+- [ ] HTTP status is `422 Unprocessable Entity`.
+- [ ] Response indicates validation failed.
+- [ ] Backend does not create a lead for the rejected request.
+
+Verify backend validation rejects an unsupported service type:
+
+```cmd
+curl.exe -i -X POST http://localhost:8000/api/contact -H "Content-Type: application/json" -d "{\"name\":\"Smoke Test\",\"email\":\"smoke@example.com\",\"serviceType\":\"Unsupported service\",\"message\":\"Smoke test contact request.\",\"consent\":true}"
 ```
 
 Expected result:
@@ -273,7 +285,7 @@ Security behavior checks:
 MVP 0 can move toward dev deployment preparation when all required smoke checks pass and these
 conditions are true:
 
-- [ ] Backend tests pass with `python -m pytest`.
+- [ ] Backend tests pass with `.\.venv\Scripts\python.exe -m pytest`.
 - [ ] Frontend build passes with `npm run build`.
 - [ ] Backend `/health` works locally.
 - [ ] Backend `/api/contact` accepts a valid contact request.
@@ -292,6 +304,7 @@ Known MVP 0 follow-ups that may still remain after this smoke test:
 
 - final landing page content and styling,
 - final legally reviewed privacy policy copy,
-- spam protection or rate limiting plan before public exposure,
+- final custom API error response envelope,
+- spam/rate limiting strategy or implementation before public exposure,
 - production URL metadata,
 - production or dev deployment execution.

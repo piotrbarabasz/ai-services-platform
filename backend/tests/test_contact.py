@@ -5,6 +5,18 @@ from fastapi.testclient import TestClient
 
 from app.config import get_settings
 from app.main import create_app
+from app.models.contact import ALLOWED_SERVICE_TYPES
+
+
+EXPECTED_ALLOWED_SERVICE_TYPES = (
+    "Website with AI chatbot",
+    "Email automation",
+    "Lead handling automation",
+    "Customer support chatbot",
+    "Voice assistant",
+    "Not sure yet",
+    "Other",
+)
 
 
 def create_test_client(monkeypatch, lead_storage_mode: str = "log") -> TestClient:
@@ -48,6 +60,33 @@ def test_contact_accepts_request_without_optional_fields(monkeypatch) -> None:
 
     assert response.status_code == 200
     assert response.json()["status"] == "success"
+
+
+def test_contact_service_type_allowlist_matches_frontend_options() -> None:
+    assert ALLOWED_SERVICE_TYPES == EXPECTED_ALLOWED_SERVICE_TYPES
+
+
+@pytest.mark.parametrize("service_type", EXPECTED_ALLOWED_SERVICE_TYPES)
+def test_contact_accepts_allowed_service_types(monkeypatch, service_type: str) -> None:
+    client = create_test_client(monkeypatch)
+    payload = valid_payload()
+    payload["serviceType"] = service_type
+
+    response = client.post("/api/contact", json=payload)
+
+    assert response.status_code == 200
+    assert response.json()["status"] == "success"
+
+
+def test_contact_rejects_unsupported_service_type(monkeypatch) -> None:
+    client = create_test_client(monkeypatch)
+    payload = valid_payload()
+    payload["serviceType"] = "Custom unsupported service"
+
+    response = client.post("/api/contact", json=payload)
+
+    assert response.status_code == 422
+    assert "Unsupported service type." in response.text
 
 
 @pytest.mark.parametrize("field", ["name", "email", "serviceType", "message", "consent"])

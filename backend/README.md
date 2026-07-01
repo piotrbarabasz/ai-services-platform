@@ -73,9 +73,24 @@ Expected response:
 }
 ```
 
+Allowed `serviceType` values:
+
+```text
+Website with AI chatbot
+Email automation
+Lead handling automation
+Customer support chatbot
+Voice assistant
+Not sure yet
+Other
+```
+
+Invalid payloads return `422`. A final custom API error response envelope is still pending, so
+validation errors currently use FastAPI's default error response shape.
+
 Current behavior:
 
-- required fields, email format and consent are validated by the backend,
+- required fields, email format, service type and consent are validated by the backend,
 - accepted submissions are converted into internal lead objects,
 - lead handling currently uses `LEAD_STORAGE_MODE=log`,
 - normal contact-flow logs include lead metadata but not full personal data,
@@ -106,6 +121,15 @@ curl.exe http://localhost:8000/health
 ```
 
 ## Tests
+
+Use the venv Python explicitly if the virtual environment is not activated:
+
+```cmd
+cd backend
+.\.venv\Scripts\python.exe -m pytest
+```
+
+If the virtual environment is already activated, this equivalent command is enough:
 
 ```cmd
 cd backend

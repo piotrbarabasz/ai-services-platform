@@ -64,7 +64,7 @@ GCP-ready Runtime
 | Component | Responsibility | Current MVP 0 Status |
 |---|---|---|
 | Frontend Website | Public landing page and contact form | `/` and `/privacy` routes exist locally; contact form is connected to backend; final landing content and legally reviewed privacy copy pending |
-| Backend API | Health check and contact endpoint | Implemented |
+| Backend API | Health check and contact endpoint | Implemented; contact validation includes required fields, email format, allowed service type values and consent; final custom error envelope pending |
 | Lead Service | Validate and process contact requests | Implemented with log-only handling |
 | Persistence Layer | Store leads or prepare future storage | Deferred; no database yet |
 | Notification Service | Notify owner about new leads | Deferred; no email integration yet |
@@ -183,6 +183,10 @@ backend/
 The frontend implementation follows the same boundaries with top-level route, component, service
 and model folders under `frontend/src/`.
 
+Current contact validation uses FastAPI and Pydantic for required fields, email format, service
+type allowlist validation and consent. Validation errors currently use FastAPI's default error
+response shape; a final custom API error envelope remains an MVP 0 backend follow-up.
+
 ### Required Endpoints
 
 | Method | Endpoint | Purpose |
@@ -195,6 +199,7 @@ and model folders under `frontend/src/`.
 The backend is responsible for:
 
 - validating incoming contact payloads,
+- rejecting unsupported contact service type values,
 - creating an internal lead representation,
 - assigning default lead status,
 - adding timestamp,
@@ -217,6 +222,7 @@ Frontend sends POST /api/contact
   |
   v
 Backend validates payload
+  (required fields, email, service type and consent)
   |
   v
 Lead Service processes lead

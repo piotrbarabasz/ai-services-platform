@@ -5,6 +5,18 @@ from pydantic import BaseModel, ConfigDict, Field, field_validator
 
 EMAIL_PATTERN = re.compile(r"^[^@\s]+@[^@\s]+\.[^@\s]+$")
 
+# Keep aligned with frontend/src/models/contact.ts until a shared schema exists.
+ALLOWED_SERVICE_TYPES: tuple[str, ...] = (
+    "Website with AI chatbot",
+    "Email automation",
+    "Lead handling automation",
+    "Customer support chatbot",
+    "Voice assistant",
+    "Not sure yet",
+    "Other",
+)
+ALLOWED_SERVICE_TYPES_SET = frozenset(ALLOWED_SERVICE_TYPES)
+
 
 class ContactRequest(BaseModel):
     model_config = ConfigDict(populate_by_name=True)
@@ -44,6 +56,14 @@ class ContactRequest(BaseModel):
         value = value.strip()
         if not EMAIL_PATTERN.match(value):
             raise ValueError("Invalid email format.")
+
+        return value
+
+    @field_validator("service_type")
+    @classmethod
+    def validate_service_type(cls, value: str) -> str:
+        if value not in ALLOWED_SERVICE_TYPES_SET:
+            raise ValueError("Unsupported service type.")
 
         return value
 

@@ -18,7 +18,7 @@ Out of scope for this frontend foundation:
 
 Current behavior:
 
-- the contact form validates required fields, email format and consent,
+- the contact form validates required fields, email format, selected service type and consent,
 - valid submissions are sent to `POST /api/contact` using `VITE_API_BASE_URL`,
 - loading, success and error states are visible to the user,
 - basic title, meta description and social metadata placeholders are configured,

@@ -163,7 +163,8 @@ Recommended local workflow:
 6. Confirm the frontend success message and check backend logs for accepted contact request metadata.
 7. Confirm backend logs do not contain full name, email, phone or message content.
 8. Test frontend validation with an invalid email and missing consent.
-9. Run validation commands before commit.
+9. Send a direct backend request with an unsupported `serviceType` and confirm the backend rejects it with `422`.
+10. Run validation commands before commit.
 
 ---
 
@@ -218,11 +219,35 @@ Expected response:
 }
 ```
 
+Allowed `serviceType` values:
+
+```text
+Website with AI chatbot
+Email automation
+Lead handling automation
+Customer support chatbot
+Voice assistant
+Not sure yet
+Other
+```
+
+Unsupported service type values are rejected by the backend with `422`.
+
+Validation errors currently use FastAPI's default error response shape. A final custom API error
+response envelope remains pending before public release.
+
 ---
 
 ## 10. Testing
 
-Suggested backend test command:
+Suggested backend test command on Windows when the backend virtual environment already exists:
+
+```cmd
+cd backend
+.\.venv\Scripts\python.exe -m pytest
+```
+
+If the virtual environment is already activated, this equivalent command is enough:
 
 ```cmd
 cd backend

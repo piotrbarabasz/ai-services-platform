@@ -1,6 +1,6 @@
 const benefits = [
   "Clear service positioning for visitors.",
-  "A contact path that can later connect to the backend.",
+  "A connected contact path that sends validated requests to the backend.",
   "Room for a chatbot demo without changing the frontend stack.",
   "Simple structure that stays easy to review."
 ];

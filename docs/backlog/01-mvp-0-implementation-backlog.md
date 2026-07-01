@@ -81,7 +81,7 @@ Completed backend work:
 * FastAPI application structure exists.
 * `GET /health` is implemented.
 * `POST /api/contact` is implemented.
-* Contact request validation exists for required fields, email format and consent.
+* Contact request validation exists for required fields, email format, allowed service type values and consent.
 * Internal lead model and lead service exist.
 * Initial lead handling uses `LEAD_STORAGE_MODE=log`.
 * Basic logging, settings and CORS configuration exist.
@@ -92,8 +92,8 @@ Backend follow-ups:
 
 * durable lead storage,
 * email notifications,
-* final custom API error response format,
-* basic spam/rate limiting approach before public exposure.
+* final custom API error response envelope,
+* spam/rate limiting strategy or implementation before public exposure.
 
 Other MVP 0 work still pending:
 
@@ -114,7 +114,7 @@ Completed frontend work:
 * Local dev server is configured for `http://localhost:4200`.
 * `/` route exists with placeholder landing sections.
 * `/privacy` route exists with MVP placeholder privacy sections.
-* Contact form UI exists with frontend validation for required fields, email and consent.
+* Contact form UI exists with frontend validation for required fields, email, selected service type and consent.
 * Contact form submits to the backend `POST /api/contact` endpoint using `VITE_API_BASE_URL`.
 * Contact form shows loading, success and user-friendly error states.
 * Duplicate submissions are prevented while a request is pending.
@@ -128,7 +128,7 @@ Still pending:
 * final landing page implementation,
 * final legally reviewed privacy policy text,
 * SEO polish,
-* basic spam protection or rate limiting plan,
+* spam/rate limiting strategy or implementation before public exposure,
 * production frontend deployment,
 * frontend test/lint tooling if later justified.
 
@@ -495,6 +495,7 @@ Implemented for the MVP 0 backend foundation:
 * `/health`,
 * `/api/contact`,
 * request validation models,
+* service type allowlist validation aligned with the frontend options,
 * configuration module,
 * basic logging,
 * CORS configuration,
@@ -502,7 +503,7 @@ Implemented for the MVP 0 backend foundation:
 
 Remaining backend foundation follow-up:
 
-* define a final custom error response envelope if needed before public release.
+* define and implement a final custom error response envelope before public release.
 
 ### Dependencies
 
@@ -815,6 +816,7 @@ MVP 0 can be considered complete when:
 * [x] `/health` endpoint works.
 * [x] `/api/contact` endpoint works.
 * [x] Contact payload validation works.
+* [x] Backend rejects unsupported contact service type values.
 * [x] Lead handling service exists.
 * [x] Frontend contact form submits to `/api/contact` locally.
 * [x] Frontend validation, loading, success and error states exist.
@@ -823,7 +825,8 @@ MVP 0 can be considered complete when:
 * [ ] Privacy policy page exists with final approved copy.
 * [x] Basic page title and meta description exist.
 * [ ] SEO polish is completed.
-* [ ] Basic spam protection or rate limiting approach is documented.
+* [ ] Final custom API error response envelope is implemented.
+* [ ] Spam/rate limiting strategy or implementation is documented.
 * [x] Secrets are not committed.
 * [x] Environment variables are documented.
 * [x] GCP deployment approach is documented.

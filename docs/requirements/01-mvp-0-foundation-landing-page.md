@@ -112,7 +112,7 @@ MVP 0 is considered complete when:
 Current MVP 0 implementation status:
 
 - backend foundation is implemented with `GET /health` and `POST /api/contact`,
-- backend validation covers required contact fields, email format and consent,
+- backend validation covers required contact fields, email format, allowed service type values and consent,
 - accepted contact submissions are converted into log-only lead records,
 - frontend foundation is implemented with routes `/` and `/privacy`,
 - frontend contact form submits to the backend using `VITE_API_BASE_URL`,
@@ -123,6 +123,8 @@ Still pending before MVP 0 can be considered complete:
 - final landing page content and styling,
 - final legally reviewed privacy policy copy,
 - SEO metadata polish,
+- final custom API error response envelope,
+- spam/rate limiting strategy or implementation before public exposure,
 - durable lead storage or notification decision,
 - first GCP dev deployment.
 
