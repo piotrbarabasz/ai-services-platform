@@ -80,7 +80,8 @@ Create the initial repository and documentation structure that will be used as t
 
 ### User Story
 
-As a project owner, I want to have a clear documentation structure, so that requirements, roadmap, architecture, risks and backlog can be developed in an organized way.
+As a project owner, I want to have a clear documentation structure, so that requirements,
+roadmap, architecture, risks and backlog can be developed in an organized way.
 
 ### Related Requirements
 
@@ -360,7 +361,8 @@ Create the initial backend API structure for health checks and future business e
 
 ### User Story
 
-As a developer, I want a clean backend API foundation, so that contact form, chatbot and future automation features can be implemented safely.
+As a developer, I want a clean backend API foundation, so that contact form, chatbot and future
+automation features can be implemented safely.
 
 ### Related Requirements
 
@@ -753,4 +755,5 @@ status: blocked
 
 ## Next Step
 
-After this backlog is accepted, the next step is to create GitHub Issues for MVP 0 or prepare a more detailed implementation plan for the first frontend and backend tasks.
+After this backlog is accepted, the next step is to create GitHub Issues for MVP 0 or prepare a
+more detailed implementation plan for the first frontend and backend tasks.

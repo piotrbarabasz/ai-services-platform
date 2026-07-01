@@ -14,6 +14,9 @@ It is based on:
 
 Do not create GitHub Issues directly from this document without review.
 
+Issues marked with `status: blocked` should not be started until the dependencies listed in
+that issue body are complete.
+
 MVP 0 issue bodies must not include:
 
 - MVP 1 chatbot widget implementation,
@@ -40,7 +43,9 @@ Milestone:
 MVP 0 - Planning Ready
 
 Description:
-Review the MVP 0 source-of-truth documentation before implementation starts. The goal is to make sure requirements, architecture, backlog, risks and operations notes are readable, current and aligned.
+Review the MVP 0 source-of-truth documentation before implementation starts.
+The goal is to make sure requirements, architecture, backlog, risks and operations notes are
+readable, current and aligned.
 
 Scope:
 
@@ -134,7 +139,8 @@ Milestone:
 MVP 0 - Planning Ready
 
 Description:
-Write the highest-priority ADRs needed before implementation, including frontend framework, backend framework, environment configuration, secret management and initial lead storage.
+Write the highest-priority ADRs needed before implementation, including frontend framework,
+backend framework, environment configuration, secret management and initial lead storage.
 
 Scope:
 

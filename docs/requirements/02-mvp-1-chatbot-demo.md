@@ -4,7 +4,8 @@
 
 The goal of MVP 1 is to add a working AI chatbot demo to the website.
 
-The chatbot should demonstrate how a personalized AI assistant can answer questions about the offered AI services and guide potential clients toward contacting the business.
+The chatbot should demonstrate how a personalized AI assistant can answer questions about the
+offered AI services and guide potential clients toward contacting the business.
 
 ---
 

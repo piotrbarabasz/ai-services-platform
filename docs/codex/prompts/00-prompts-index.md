@@ -4,31 +4,44 @@
 
 This file indexes reusable Codex prompts for the AI Services Platform repository.
 
-Use these prompts to keep planning, documentation and implementation work small, reviewable and aligned with the MVP scope.
+Use these prompts to keep planning, documentation and implementation work small, reviewable
+and aligned with the current MVP scope.
 
-This file is the prompt index. The reusable prompt files currently start at `01-`.
+Current focus:
+
+1. MVP 0 - Foundation & Landing Page
+2. MVP 1 - AI Chatbot Demo
+
+MVP 2 and later items are future planning only. Do not use these prompts to implement later
+MVP scope unless that work is explicitly requested and documented separately.
 
 ---
 
 ## Prompt Metadata
 
-- **[01-plan-mvp-0-foundation.md](01-plan-mvp-0-foundation.md)**
-  - Group: Planning
-  - Documentation-only: Yes
-  - Can edit files: No
-  - When to use: Before implementing MVP 0 foundation work
+| File | Group | Documentation-only | Can edit files | When to use |
+|---|---|---|---|---|
+| [00-prompts-index.md](00-prompts-index.md) | Index | Yes | Yes | To maintain this prompt index |
+| [01-plan-mvp-0-foundation.md](01-plan-mvp-0-foundation.md) | Planning | Yes | No | Before implementing MVP 0 foundation work |
+| [02-implement-readme.md](02-implement-readme.md) | Documentation | Yes | Yes | To create or update the root `README.md` |
+| [03-plan-backend-foundation.md](03-plan-backend-foundation.md) | Planning | Yes | No | Before implementing the MVP 0 backend foundation |
 
-- **[02-implement-readme.md](02-implement-readme.md)**
-  - Group: Documentation
-  - Documentation-only: Yes
-  - Can edit files: Yes
-  - When to use: To create or update the root `README.md` after the MVP 0 plan is reviewed
+---
 
-- **[03-plan-backend-foundation.md](03-plan-backend-foundation.md)**
-  - Group: Planning
-  - Documentation-only: Yes
-  - Can edit files: No
-  - When to use: Before implementing the MVP 0 backend foundation
+## Recommended Usage Order
+
+For MVP 0 work, use prompts in this order:
+
+1. [01-plan-mvp-0-foundation.md](01-plan-mvp-0-foundation.md)
+2. [02-implement-readme.md](02-implement-readme.md)
+3. [03-plan-backend-foundation.md](03-plan-backend-foundation.md)
+
+After the relevant plan is reviewed, use a narrowly scoped implementation prompt for one MVP 0
+task at a time.
+
+For MVP 1 chatbot work, add or use MVP 1-specific prompts only after MVP 0 foundations are ready.
+Do not use MVP 1 prompts to add RAG, multi-client support, admin panel, voice assistant or other
+future-MVP features.
 
 ---
 
@@ -45,7 +58,8 @@ Use this prompt to analyze the repository and prepare an MVP 0 implementation pl
 
 ### [03-plan-backend-foundation.md](03-plan-backend-foundation.md)
 
-Use this prompt to prepare a detailed backend foundation implementation plan before writing backend code.
+Use this prompt to prepare a detailed backend foundation implementation plan before writing
+backend code.
 
 - Documentation-only: Yes
 - Can edit files: No
@@ -70,6 +84,7 @@ Use this prompt to create or update the root `README.md`.
 No dedicated implementation prompt files are currently committed in this directory.
 
 Use implementation prompts only after the relevant plan has been reviewed and MVP scope is clear.
+Implementation work should remain focused on MVP 0 first and MVP 1 next.
 
 ---
 
@@ -85,6 +100,9 @@ When adding a review prompt, mark whether it is documentation-only and whether i
 
 - Read `AGENTS.md` and relevant `docs/` files before using a prompt.
 - Keep each task small and scoped to the current MVP.
-- Do not implement future MVP features unless explicitly requested.
+- Use MVP 0 prompts before MVP 1 implementation work.
+- Keep MVP 2 and later features future-only unless explicitly requested.
+- Do not implement future MVP features from MVP 0 or MVP 1 prompts.
 - For planning prompts, do not edit files.
+- For documentation prompts, edit only the documented files in scope.
 - For implementation prompts, summarize changed files and validation steps.

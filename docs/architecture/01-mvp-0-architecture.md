@@ -13,7 +13,8 @@ MVP 0 should provide a simple but production-oriented foundation for:
 - basic security,
 - future deployment to Google Cloud Platform.
 
-The architecture should stay simple, but it should not block future MVPs such as chatbot demo, multi-client support, RAG and email automation.
+The architecture should stay simple, but it should not block future MVPs such as chatbot demo,
+multi-client support, RAG and email automation.
 
 ---
 

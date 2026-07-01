@@ -51,16 +51,29 @@ For prompt-based work, read the [Codex prompts index](codex/prompts/00-prompts-i
 
 ## Documentation Map
 
-| Area | Where to Start | Related Documents | Notes |
-|---|---|---|---|
-| Project overview | [00-overview.md](00-overview.md) | [Roadmap overview](roadmap/00-roadmap-overview.md) | Product vision, MVP sequence and documentation structure |
-| Requirements | [requirements/00-requirements-index.md](requirements/00-requirements-index.md) | [MVP 0 requirements](requirements/01-mvp-0-foundation-landing-page.md), [MVP 1 requirements](requirements/02-mvp-1-chatbot-demo.md) | MVP 0 first, MVP 1 next; MVP 2+ requirements are not started |
-| Architecture | [architecture/01-mvp-0-architecture.md](architecture/01-mvp-0-architecture.md) | [Architecture overview](architecture/00-architecture-overview.md), [MVP 1 chatbot architecture](architecture/02-mvp-1-chatbot-architecture.md) | Architecture overview is a placeholder; use MVP-specific architecture docs for current work |
-| Backlog | [backlog/00-epics.md](backlog/00-epics.md) | [MVP 0 backlog](backlog/01-mvp-0-implementation-backlog.md), [MVP 1 backlog](backlog/02-mvp-1-implementation-backlog.md), [MVP 0 GitHub issues plan](backlog/03-mvp-0-github-issues-plan.md) | Do not create GitHub Issues without review |
-| Decisions | [decisions/00-adr-backlog.md](decisions/00-adr-backlog.md) | [ADR 0001](decisions/0001-use-github-as-documentation-source.md), [ADR 0002](decisions/0002-use-gcp-as-cloud-platform.md) | Accepted ADRs and candidate ADRs |
-| Risks | [risks/00-risk-register.md](risks/00-risk-register.md) | [AI risk register](risks/01-ai-risk-register.md) | General risks plus MVP 1 AI-specific risks |
-| Operations | [operations/00-local-development.md](operations/00-local-development.md) | [Deployment](operations/00-deployment.md), [Monitoring](operations/01-monitoring.md), [Cost control](operations/02-cost-control.md), [LLM cost control](operations/03-llm-cost-control.md) | Monitoring and general cost-control docs are placeholders |
-| Codex workflow | [codex/00-codex-workflow.md](codex/00-codex-workflow.md) | [Codex prompts index](codex/prompts/00-prompts-index.md) | Repository-specific Codex usage and reusable prompts |
+Related documents are listed in the sections below the map.
+
+| Area | Where to Start | Notes |
+|---|---|---|
+| Project overview | [Overview][overview] | Product vision, MVP sequence and documentation structure |
+| Requirements | [Requirements index][requirements-index] | MVP 0 first, MVP 1 next; MVP 2+ requirements are not started |
+| Roadmap | [Roadmap overview][roadmap-overview] | Future MVPs remain future-only until explicitly requested |
+| Architecture | [MVP 0 architecture][mvp0-architecture] | Use MVP-specific architecture docs for current work |
+| Backlog | [Initial epics][epics] | Do not create GitHub Issues without review |
+| Decisions | [ADR backlog][adr-backlog] | Accepted ADRs and candidate ADRs |
+| Risks | [Risk register][risk-register] | General risks plus MVP 1 AI-specific risks |
+| Operations | [Local development][local-development] | Deployment, monitoring and cost docs are linked below |
+| Codex workflow | [Codex workflow][codex-workflow] | Repository-specific Codex usage and reusable prompts |
+
+[overview]: 00-overview.md
+[requirements-index]: requirements/00-requirements-index.md
+[roadmap-overview]: roadmap/00-roadmap-overview.md
+[mvp0-architecture]: architecture/01-mvp-0-architecture.md
+[epics]: backlog/00-epics.md
+[adr-backlog]: decisions/00-adr-backlog.md
+[risk-register]: risks/00-risk-register.md
+[local-development]: operations/00-local-development.md
+[codex-workflow]: codex/00-codex-workflow.md
 
 ---
 

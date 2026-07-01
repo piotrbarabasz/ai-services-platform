@@ -23,7 +23,7 @@ AI-specific MVP 1 risks are tracked in the [AI risk register](01-ai-risk-registe
 | RISK-007 | GCP setup becomes too complex | Infrastructure | Medium | Medium | Start with minimal Cloud Run-based deployment |
 | RISK-008 | Voice assistant is underestimated | Product | High | High | Keep voice assistant out of early MVPs |
 | RISK-009 | RODO/privacy requirements are ignored | Compliance | Medium | High | Add privacy policy and minimize personal data storage |
-| RISK-010 | Multi-client architecture is added too early | Architecture | Medium | Medium | Start with single-client demo and design extension points |
+| RISK-010 | Multi-client architecture added too early | Architecture | Medium | Medium | Start single-client and design extension points |
 
 ---
 

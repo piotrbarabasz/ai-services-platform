@@ -4,7 +4,9 @@
 
 This document describes how to run the AI Services Platform locally during MVP 0 development.
 
-At this stage the project may still be documentation-only. This file defines the target local development workflow that should be implemented once frontend and backend code are added.
+At this stage the project may still be documentation-only.
+This file defines the target local development workflow that should be implemented once frontend
+and backend code are added.
 
 ---
 

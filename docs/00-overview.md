@@ -2,7 +2,8 @@
 
 ## 1. Project Purpose
 
-The purpose of this project is to build a Google Cloud Platform based website and technical foundation for offering AI services to small and medium businesses.
+The purpose of this project is to build a Google Cloud Platform based website and technical
+foundation for offering AI services to small and medium businesses.
 
 The initial business offer includes:
 
@@ -13,7 +14,8 @@ The initial business offer includes:
 - knowledge-based chatbots,
 - future 24/7 voice assistants.
 
-The project should start as a marketing and lead-generation website with working AI demos, and later evolve into a reusable platform for delivering AI solutions to multiple clients.
+The project should start as a marketing and lead-generation website with working AI demos,
+and later evolve into a reusable platform for delivering AI solutions to multiple clients.
 
 ---
 

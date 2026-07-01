@@ -4,7 +4,8 @@
 
 This document describes the target deployment direction for the AI Services Platform.
 
-For MVP 0, deployment should stay simple and focus on preparing the application for Google Cloud Platform, especially Cloud Run for the backend.
+For MVP 0, deployment should stay simple and focus on preparing the application for Google Cloud
+Platform, especially Cloud Run for the backend.
 
 ---
 

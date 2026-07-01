@@ -16,6 +16,11 @@ Related documents:
 - [Local development](../operations/00-local-development.md)
 - [ADR 0001: Use GitHub as Documentation Source](0001-use-github-as-documentation-source.md)
 - [ADR 0002: Use Google Cloud Platform as Cloud Platform](0002-use-gcp-as-cloud-platform.md)
+- [ADR 0003: Choose Frontend Framework](0003-choose-frontend-framework.md)
+- [ADR 0004: Choose Backend Framework](0004-choose-backend-framework.md)
+- [ADR 0005: Choose Environment Configuration Strategy](0005-choose-environment-configuration-strategy.md)
+- [ADR 0006: Choose Secret Management Strategy](0006-choose-secret-management-strategy.md)
+- [ADR 0007: Choose Initial Lead Storage Strategy](0007-choose-initial-lead-storage-strategy.md)
 - [MVP 1 requirements](../requirements/02-mvp-1-chatbot-demo.md)
 - [MVP 1 chatbot architecture](../architecture/02-mvp-1-chatbot-architecture.md)
 - [LLM cost control](../operations/03-llm-cost-control.md)
@@ -43,62 +48,45 @@ Related documents:
   - Status: Accepted
   - Notes: Establishes GCP as the main cloud direction.
 
+- **[ADR 0003](0003-choose-frontend-framework.md) - Choose frontend framework**
+  - Status: Accepted
+  - Notes: Resolves ADR-CAND-001 with Vite, React and TypeScript for MVP 0.
+
+- **[ADR 0004](0004-choose-backend-framework.md) - Choose backend framework**
+  - Status: Accepted
+  - Notes: Resolves ADR-CAND-002 with FastAPI and Python for MVP 0.
+
+- **[ADR 0005](0005-choose-environment-configuration-strategy.md) - Choose environment configuration strategy**
+  - Status: Accepted
+  - Notes: Resolves ADR-CAND-004 with `.env.example` files and runtime environment variables.
+
+- **[ADR 0006](0006-choose-secret-management-strategy.md) - Choose secret management strategy**
+  - Status: Accepted
+  - Notes: Resolves ADR-CAND-005 with untracked local secrets and GCP Secret Manager for production.
+
+- **[ADR 0007](0007-choose-initial-lead-storage-strategy.md) - Choose initial lead storage strategy**
+  - Status: Accepted
+  - Notes: Resolves ADR-CAND-003 with `LEAD_STORAGE_MODE=log` first and durable storage deferred.
+
 ---
 
-## 4. MVP 0 Required ADR Candidates
+## 4. MVP 0 ADR Candidates
 
 These decisions are needed for MVP 0 implementation or MVP 0 public deployment.
 
-### ADR-CAND-001 - Choose frontend framework
+### Completed MVP 0 ADR Candidates
 
-- MVP: MVP 0
-- Priority: P0
-- Why it matters: The frontend framework determines project structure, routing, build tooling,
-  environment variable handling, local commands and hosting compatibility.
-- Relevant docs:
-  - [MVP 0 architecture](../architecture/01-mvp-0-architecture.md)
-  - [MVP 0 backlog](../backlog/01-mvp-0-implementation-backlog.md)
-  - [Local development](../operations/00-local-development.md)
+| Candidate | Status | ADR | Notes |
+|---|---|---|---|
+| ADR-CAND-001 | Accepted | [ADR 0003](0003-choose-frontend-framework.md) | Frontend framework |
+| ADR-CAND-002 | Accepted | [ADR 0004](0004-choose-backend-framework.md) | Backend framework |
+| ADR-CAND-003 | Accepted | [ADR 0007](0007-choose-initial-lead-storage-strategy.md) | Initial lead storage |
+| ADR-CAND-004 | Accepted | [ADR 0005](0005-choose-environment-configuration-strategy.md) | Environment configuration |
+| ADR-CAND-005 | Accepted | [ADR 0006](0006-choose-secret-management-strategy.md) | Secret management |
 
-### ADR-CAND-002 - Choose backend framework
+### Remaining MVP 0 ADR Candidates
 
-- MVP: MVP 0
-- Priority: P0
-- Why it matters: The backend framework determines API structure, validation approach, testing setup,
-  local run commands, container image shape and future chatbot endpoint integration.
-- Relevant docs:
-  - [MVP 0 architecture](../architecture/01-mvp-0-architecture.md)
-  - [MVP 0 backlog](../backlog/01-mvp-0-implementation-backlog.md)
-  - [Local development](../operations/00-local-development.md)
-
-### ADR-CAND-003 - Choose initial lead storage strategy
-
-- MVP: MVP 0
-- Priority: P0
-- Why it matters: Contact form submissions need a clear handling strategy before production use,
-  even if MVP 0 starts with log-only or temporary storage.
-- Relevant docs:
-  - [MVP 0 architecture](../architecture/01-mvp-0-architecture.md)
-  - [MVP 0 backlog](../backlog/01-mvp-0-implementation-backlog.md)
-  - [Deployment](../operations/00-deployment.md)
-
-### ADR-CAND-004 - Choose environment configuration strategy
-
-- MVP: MVP 0
-- Priority: P0
-- Why it matters: The project needs consistent local, dev and prod configuration before backend and frontend code are created.
-- Relevant docs: [Local development](../operations/00-local-development.md), [Deployment](../operations/00-deployment.md)
-
-### ADR-CAND-005 - Choose secret management strategy
-
-- MVP: MVP 0
-- Priority: P0
-- Why it matters: Secrets must stay out of source control and frontend code; local and GCP secret handling
-  should be defined before deployment preparation.
-- Relevant docs:
-  - [MVP 0 architecture](../architecture/01-mvp-0-architecture.md)
-  - [Deployment](../operations/00-deployment.md)
-  - [ADR 0002](0002-use-gcp-as-cloud-platform.md)
+These MVP 0 decisions remain open and are needed before MVP 0 public deployment.
 
 ### ADR-CAND-006 - Choose frontend hosting strategy
 
@@ -207,13 +195,13 @@ These decisions should stay separate from MVP 0 and MVP 1. They should not block
 
 ## 7. Suggested ADR Writing Order
 
-Recommended order before MVP 0 implementation:
+Completed before MVP 0 implementation:
 
-1. `0003-choose-frontend-framework.md`
-2. `0004-choose-backend-framework.md`
-3. `0005-choose-environment-configuration-strategy.md`
-4. `0006-choose-secret-management-strategy.md`
-5. `0007-choose-initial-lead-storage-strategy.md`
+1. [ADR 0003 - Choose frontend framework](0003-choose-frontend-framework.md)
+2. [ADR 0004 - Choose backend framework](0004-choose-backend-framework.md)
+3. [ADR 0005 - Choose environment configuration strategy](0005-choose-environment-configuration-strategy.md)
+4. [ADR 0006 - Choose secret management strategy](0006-choose-secret-management-strategy.md)
+5. [ADR 0007 - Choose initial lead storage strategy](0007-choose-initial-lead-storage-strategy.md)
 
 Recommended order before MVP 0 public deployment:
 
@@ -229,7 +217,25 @@ Recommended order before MVP 1 implementation:
 
 ---
 
-## 8. ADR Readiness Checklist
+## 8. Next ADRs
+
+The next ADRs should focus on MVP 0 public deployment readiness:
+
+1. `0008-choose-frontend-hosting-strategy.md`
+2. `0009-choose-backend-deployment-strategy.md`
+3. `0010-choose-logging-strategy.md`
+4. `0011-choose-monitoring-strategy.md`
+
+MVP 1 ADRs should remain separate and should wait until MVP 1 implementation planning starts:
+
+1. `0012-choose-llm-provider-strategy.md`
+2. `0013-choose-chatbot-session-handling-strategy.md`
+
+Future MVP decisions remain deferred and should not block MVP 0 or MVP 1.
+
+---
+
+## 9. ADR Readiness Checklist
 
 Before writing an ADR from this backlog:
 

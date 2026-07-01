@@ -6,7 +6,8 @@ Accepted
 
 ## Context
 
-The project requires a cloud platform for hosting a public website, backend APIs, AI integrations, logs, monitoring, secrets and future automation workflows.
+The project requires a cloud platform for hosting a public website, backend APIs,
+AI integrations, logs, monitoring, secrets and future automation workflows.
 
 Possible options included:
 
