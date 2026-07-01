@@ -17,8 +17,11 @@ export function App() {
 
   return (
     <div className="app-shell">
+      <a className="skip-link" href="#main-content">
+        Skip to content
+      </a>
       <Navbar />
-      <main>{page}</main>
+      <main id="main-content">{page}</main>
       <Footer />
     </div>
   );

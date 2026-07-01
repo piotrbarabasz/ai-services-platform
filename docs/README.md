@@ -30,7 +30,8 @@ Current implementation snapshot:
 - Frontend routes `/` and `/privacy` are available locally.
 - Contact form submission to `POST /api/contact` is implemented with frontend validation and user-facing loading, success and error states.
 - The local end-to-end contact flow works when the frontend uses `VITE_API_BASE_URL=http://localhost:8000`.
-- Final landing content, final privacy copy, SEO polish and production deployment are still pending.
+- The future chatbot area is placeholder-only; chatbot, LLM and RAG functionality are not implemented.
+- Final landing content, final legally reviewed privacy copy, spam protection, SEO polish and production deployment are still pending.
 
 ---
 
@@ -128,6 +129,7 @@ Related documents are listed in the sections below the map.
 - [Monitoring](operations/01-monitoring.md)
 - [Cost control](operations/02-cost-control.md)
 - [LLM cost control](operations/03-llm-cost-control.md)
+- [MVP 0 smoke test checklist](operations/04-mvp-0-smoke-test-checklist.md)
 
 ### Codex
 

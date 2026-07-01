@@ -176,7 +176,13 @@ export function ContactSection() {
       onSubmit={handleSubmit}
       noValidate
       aria-busy={isSubmitting}
+      aria-describedby="contact-form-helper"
     >
+      <p className="form-helper" id="contact-form-helper">
+        Required fields are marked with *. Submitted details are used to respond
+        to your inquiry.
+      </p>
+
       <div className="field-grid">
         <div className="form-field">
           <label htmlFor="contact-name">Name *</label>
@@ -311,8 +317,8 @@ export function ContactSection() {
             }
           />
           <span>
-            I agree to be contacted about this request and understand that my
-            data will be processed according to the{" "}
+            I agree to be contacted regarding my inquiry and understand that my
+            submitted data will be processed to handle this request. See the{" "}
             <a href="/privacy">privacy policy</a>.
           </span>
         </label>

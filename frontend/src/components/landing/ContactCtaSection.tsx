@@ -5,11 +5,11 @@ export function ContactCtaSection() {
     <section className="section contact-section" id="contact">
       <div className="container contact-layout">
         <div>
-          <p className="section-kicker">Contact CTA</p>
-          <h2>Prepare the next conversation.</h2>
+          <p className="section-kicker">Contact</p>
+          <h2>Send a project inquiry.</h2>
           <p>
-            This area reserves the future contact form integration point for
-            the existing backend `/api/contact` endpoint.
+            Use the MVP 0 contact form to describe your needs. The request is
+            sent to the backend contact endpoint when the local API is running.
           </p>
         </div>
         <ContactSection />

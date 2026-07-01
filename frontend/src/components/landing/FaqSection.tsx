@@ -5,14 +5,14 @@ const faqs = [
       "No. MVP 0 only prepares the website and contact flow. Chatbot work belongs to MVP 1."
   },
   {
-    question: "Does the frontend send contact requests yet?",
+    question: "Can I send a contact request now?",
     answer:
-      "No. This skeleton keeps the contact area visible but does not call the backend."
+      "Yes. The form sends contact requests to the MVP 0 backend when VITE_API_BASE_URL points to the running API."
   },
   {
     question: "Are analytics or tracking included?",
     answer:
-      "No. The frontend skeleton does not add analytics, tracking scripts or third-party forms."
+      "No. The frontend does not add analytics, tracking scripts or third-party forms."
   }
 ];
 

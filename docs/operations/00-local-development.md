@@ -8,6 +8,9 @@ The MVP 0 backend exists and can be run locally. The frontend foundation also ex
 The frontend contact form submits to the backend `POST /api/contact` endpoint during local
 development.
 
+These instructions cover local development only. Production frontend deployment and Cloud Run
+deployment have not been executed yet.
+
 ---
 
 ## 2. Expected Repository Structure
@@ -158,8 +161,9 @@ Recommended local workflow:
 4. Open landing page.
 5. Fill and submit the contact form with valid data.
 6. Confirm the frontend success message and check backend logs for accepted contact request metadata.
-7. Test frontend validation with an invalid email and missing consent.
-8. Run validation commands before commit.
+7. Confirm backend logs do not contain full name, email, phone or message content.
+8. Test frontend validation with an invalid email and missing consent.
+9. Run validation commands before commit.
 
 ---
 
@@ -233,7 +237,7 @@ npm run typecheck
 npm run build
 ```
 
-Backend tests are configured. A frontend test runner is not configured yet.
+Backend tests are configured. A frontend test runner and lint script are not configured yet.
 
 ---
 

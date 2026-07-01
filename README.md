@@ -23,7 +23,7 @@ Current MVP 0 backend status:
 
 - FastAPI backend exists in [`backend/`](backend/).
 - `GET /health` and `POST /api/contact` are implemented and covered by backend tests.
-- Contact submissions are handled through a lead service in log-only mode; no database or email notifications are implemented yet.
+- Contact submissions are accepted by the backend and handled through a lead service in log-only mode; no database or email notifications are implemented yet.
 - Backend Docker support exists for future Cloud Run deployment preparation.
 - Cloud Run deployment has not been executed.
 
@@ -31,10 +31,11 @@ Current MVP 0 frontend status:
 
 - Vite, React and TypeScript frontend foundation exists in [`frontend/`](frontend/).
 - Routes `/` and `/privacy` are available locally.
-- Landing page sections and future chatbot area are still placeholder-level.
+- Landing page sections exist but final content and styling are still pending.
 - Contact form submission to `POST /api/contact` is implemented with frontend validation and user-facing loading, success and error states.
 - The contact flow works locally when the backend runs on `http://localhost:8000` and the frontend runs on `http://localhost:4200`.
-- Final privacy copy, final landing content and SEO polish are still pending.
+- The future chatbot demo area is placeholder-only; no chatbot widget, LLM integration or RAG is implemented.
+- Final legally reviewed privacy copy, SEO polish, spam protection and production deployment are still pending.
 
 ---
 

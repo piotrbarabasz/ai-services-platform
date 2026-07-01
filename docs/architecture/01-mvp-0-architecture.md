@@ -63,7 +63,7 @@ GCP-ready Runtime
 
 | Component | Responsibility | Current MVP 0 Status |
 |---|---|---|
-| Frontend Website | Public landing page and contact form | Foundation implemented; contact form connected to backend; final landing content and privacy copy pending |
+| Frontend Website | Public landing page and contact form | `/` and `/privacy` routes exist locally; contact form is connected to backend; final landing content and legally reviewed privacy copy pending |
 | Backend API | Health check and contact endpoint | Implemented |
 | Lead Service | Validate and process contact requests | Implemented with log-only handling |
 | Persistence Layer | Store leads or prepare future storage | Deferred; no database yet |
@@ -116,8 +116,10 @@ The frontend is responsible for:
 - providing responsive layout.
 
 Current MVP 0 frontend implementation includes an active contact form that submits to
-`POST /api/contact` through a typed API client using `VITE_API_BASE_URL`. The landing page content
-and privacy page copy are still placeholder-level and need final review before public release.
+`POST /api/contact` through a typed API client using `VITE_API_BASE_URL`. The contact form shows
+loading, success and error states. The privacy page contains MVP placeholder sections, but the
+landing page content and legally reviewed privacy copy still need final review before public
+release.
 
 ### Frontend Restrictions
 

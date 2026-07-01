@@ -121,7 +121,7 @@ Current MVP 0 implementation status:
 Still pending before MVP 0 can be considered complete:
 
 - final landing page content and styling,
-- final privacy policy copy,
+- final legally reviewed privacy policy copy,
 - SEO metadata polish,
 - durable lead storage or notification decision,
 - first GCP dev deployment.

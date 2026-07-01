@@ -92,12 +92,13 @@ Backend follow-ups:
 
 * durable lead storage,
 * email notifications,
-* final custom API error response format.
+* final custom API error response format,
+* basic spam/rate limiting approach before public exposure.
 
 Other MVP 0 work still pending:
 
 * final landing page content and styling,
-* final privacy policy copy and SEO basics,
+* final legally reviewed privacy policy copy and SEO polish,
 * production Cloud Run deployment.
 
 ---
@@ -112,7 +113,7 @@ Completed frontend work:
 * Vite, React and TypeScript are configured.
 * Local dev server is configured for `http://localhost:4200`.
 * `/` route exists with placeholder landing sections.
-* `/privacy` route exists with placeholder privacy content.
+* `/privacy` route exists with MVP placeholder privacy sections.
 * Contact form UI exists with frontend validation for required fields, email and consent.
 * Contact form submits to the backend `POST /api/contact` endpoint using `VITE_API_BASE_URL`.
 * Contact form shows loading, success and user-friendly error states.
@@ -125,8 +126,9 @@ Completed frontend work:
 Still pending:
 
 * final landing page implementation,
-* final privacy policy text,
-* SEO basics,
+* final legally reviewed privacy policy text,
+* SEO polish,
+* basic spam protection or rate limiting plan,
 * production frontend deployment,
 * frontend test/lint tooling if later justified.
 
@@ -806,7 +808,8 @@ MVP 0 can be considered complete when:
 
 * [x] Documentation foundation exists.
 * [x] Frontend application exists.
-* [ ] Landing page is implemented.
+* [x] Landing page route and placeholder sections exist.
+* [ ] Final landing page content and styling are implemented.
 * [x] Contact form UI is implemented.
 * [x] Backend application exists.
 * [x] `/health` endpoint works.
@@ -815,12 +818,16 @@ MVP 0 can be considered complete when:
 * [x] Lead handling service exists.
 * [x] Frontend contact form submits to `/api/contact` locally.
 * [x] Frontend validation, loading, success and error states exist.
-* [x] Privacy route placeholder exists.
+* [x] Privacy route with MVP placeholder content exists.
+* [x] Contact consent copy links to the privacy route.
 * [ ] Privacy policy page exists with final approved copy.
-* [ ] SEO basics are configured.
+* [x] Basic page title and meta description exist.
+* [ ] SEO polish is completed.
+* [ ] Basic spam protection or rate limiting approach is documented.
 * [x] Secrets are not committed.
 * [x] Environment variables are documented.
 * [x] GCP deployment approach is documented.
+* [ ] Production deployment has been executed.
 * [x] Local development instructions exist.
 
 ---

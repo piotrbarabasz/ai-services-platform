@@ -2,6 +2,13 @@
 
 FastAPI backend foundation for MVP 0.
 
+Current status:
+
+- `GET /health` and `POST /api/contact` are implemented.
+- Contact requests are validated and converted into log-only lead records.
+- Durable lead storage and email notifications are not implemented yet.
+- Production Cloud Run deployment has not been executed.
+
 ## Local Run
 
 ```cmd
@@ -71,6 +78,7 @@ Current behavior:
 - required fields, email format and consent are validated by the backend,
 - accepted submissions are converted into internal lead objects,
 - lead handling currently uses `LEAD_STORAGE_MODE=log`,
+- normal contact-flow logs include lead metadata but not full personal data,
 - no durable database storage or email notification is implemented yet.
 
 ## Docker
