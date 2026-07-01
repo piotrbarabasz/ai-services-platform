@@ -72,6 +72,59 @@ MVP 0 does not include:
 
 ---
 
+## 5. Current Backend Implementation Status
+
+The MVP 0 backend foundation has been implemented.
+
+Completed backend work:
+
+* FastAPI application structure exists.
+* `GET /health` is implemented.
+* `POST /api/contact` is implemented.
+* Contact request validation exists for required fields, email format and consent.
+* Internal lead model and lead service exist.
+* Initial lead handling uses `LEAD_STORAGE_MODE=log`.
+* Basic logging, settings and CORS configuration exist.
+* Backend tests exist for health and contact endpoint behavior.
+* Backend Dockerfile and `.dockerignore` exist for Cloud Run preparation.
+
+Still pending:
+
+* final landing page content and styling,
+* active contact form UI with frontend validation and backend submission,
+* final privacy policy copy and SEO basics,
+* durable lead storage,
+* email notifications,
+* production Cloud Run deployment,
+* final custom API error response format.
+
+---
+
+## 6. Current Frontend Skeleton Status
+
+The MVP 0 frontend application skeleton has been created.
+
+Completed frontend skeleton work:
+
+* `frontend/` exists.
+* Vite, React and TypeScript are configured.
+* Local dev server is configured for `http://localhost:4200`.
+* `/` route exists with placeholder landing sections.
+* `/privacy` route exists with placeholder privacy content.
+* Contact area exists as a placeholder and does not submit to the backend yet.
+* Future chatbot demo area exists as a placeholder only.
+* Frontend environment example exists.
+
+Still pending:
+
+* final landing page implementation,
+* active contact form component,
+* frontend validation and `/api/contact` integration,
+* final privacy policy text,
+* SEO basics and production frontend deployment.
+
+---
+
 ## EPIC-01 — Project & Documentation Foundation
 
 ### Goal
@@ -425,6 +478,23 @@ backend/
 * CORS configuration exists.
 * Tests can be run locally.
 
+### Current Status
+
+Implemented for the MVP 0 backend foundation:
+
+* backend application structure,
+* `/health`,
+* `/api/contact`,
+* request validation models,
+* configuration module,
+* basic logging,
+* CORS configuration,
+* endpoint tests.
+
+Remaining backend foundation follow-up:
+
+* define a final custom error response envelope if needed before public release.
+
 ### Dependencies
 
 * EPIC-01 — Project & Documentation Foundation
@@ -508,6 +578,22 @@ The final decision should be documented as an ADR before production launch.
 * Invalid lead data is rejected.
 * Lead handling does not expose sensitive data in logs.
 * Future persistence option is documented.
+
+### Current Status
+
+Implemented for MVP 0:
+
+* contact submissions are converted into internal lead objects,
+* leads receive generated id, `createdAt`, `status=new` and `source=website_contact_form`,
+* lead processing is separated into a service layer,
+* log-only storage mode is used,
+* full personal data is not logged by default.
+
+Deferred:
+
+* durable storage,
+* notifications,
+* CRM integration.
 
 ### Dependencies
 
@@ -604,6 +690,22 @@ As a developer, I want the project to be ready for GCP deployment, so that the f
 * `/health` endpoint is available for monitoring.
 * Deployment notes are clear enough to follow later.
 
+### Current Status
+
+Implemented:
+
+* backend Dockerfile,
+* backend `.dockerignore`,
+* environment variable documentation,
+* local Docker build/run instructions,
+* deployment notes for the Cloud Run direction.
+
+Not completed:
+
+* Artifact Registry setup,
+* Cloud Run deployment execution,
+* budget alert setup.
+
 ### Dependencies
 
 * EPIC-05 — Backend API Foundation
@@ -695,21 +797,21 @@ As a developer, I want clear local development instructions, so that I can run t
 
 MVP 0 can be considered complete when:
 
-* [ ] Documentation foundation exists.
-* [ ] Frontend application exists.
+* [x] Documentation foundation exists.
+* [x] Frontend application exists.
 * [ ] Landing page is implemented.
 * [ ] Contact form UI is implemented.
-* [ ] Backend application exists.
-* [ ] `/health` endpoint works.
-* [ ] `/api/contact` endpoint works.
-* [ ] Contact payload validation works.
-* [ ] Lead handling service exists.
-* [ ] Privacy policy page exists.
+* [x] Backend application exists.
+* [x] `/health` endpoint works.
+* [x] `/api/contact` endpoint works.
+* [x] Contact payload validation works.
+* [x] Lead handling service exists.
+* [ ] Privacy policy page exists with final approved copy.
 * [ ] SEO basics are configured.
-* [ ] Secrets are not committed.
-* [ ] Environment variables are documented.
-* [ ] GCP deployment approach is documented.
-* [ ] Local development instructions exist.
+* [x] Secrets are not committed.
+* [x] Environment variables are documented.
+* [x] GCP deployment approach is documented.
+* [x] Local development instructions exist.
 
 ---
 

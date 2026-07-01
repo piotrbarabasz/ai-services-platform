@@ -4,9 +4,8 @@
 
 This document describes how to run the AI Services Platform locally during MVP 0 development.
 
-At this stage the project may still be documentation-only.
-This file defines the target local development workflow that should be implemented once frontend
-and backend code are added.
+The MVP 0 backend exists and can be run locally. The frontend skeleton also exists.
+Full frontend contact form integration is still pending.
 
 ---
 
@@ -33,9 +32,11 @@ backend/
     services/
     models/
     config/
-    tests/
+  tests/
   requirements.txt
   .env.example
+  Dockerfile
+  .dockerignore
 ```
 
 Suggested frontend structure:
@@ -101,28 +102,37 @@ The actual variable names may change depending on the selected frontend framewor
 
 ## 5. Backend Local Run
 
-Target command for backend development:
+Current command for backend development on Windows CMD:
 
-```powershell
+```cmd
 cd backend
 python -m venv .venv
 .venv\Scripts\activate
-pip install -r requirements.txt
-uvicorn app.main:app --reload --port 8000
+python -m pip install -r requirements.txt
+python -m uvicorn app.main:app --reload --port 8000
 ```
 
 Expected result:
 
 - backend API runs at `http://localhost:8000`,
-- health check available at `http://localhost:8000/health`.
+- health check available at `http://localhost:8000/health`,
+- contact endpoint available at `http://localhost:8000/api/contact`.
+
+Docker alternative:
+
+```cmd
+cd backend
+docker build -t ai-services-backend .
+docker run --rm -p 8000:8000 -e PORT=8000 ai-services-backend
+```
 
 ---
 
 ## 6. Frontend Local Run
 
-Target command for frontend development:
+Current command for frontend development on Windows CMD:
 
-```powershell
+```cmd
 cd frontend
 npm install
 npm run dev
@@ -130,15 +140,11 @@ npm run dev
 
 Expected result:
 
-- frontend runs locally and can call the backend API.
-
-The exact local URL depends on the selected framework.
-
-Examples:
-
-- Angular: `http://localhost:4200`
-- Vite/React: `http://localhost:5173`
-- Next.js: `http://localhost:3000`
+- frontend runs locally at `http://localhost:4200`,
+- homepage route is available at `http://localhost:4200/`,
+- privacy route is available at `http://localhost:4200/privacy`,
+- API base URL is documented through `frontend/.env.example`,
+- contact form submission is not wired yet.
 
 ---
 
@@ -150,8 +156,8 @@ Recommended local workflow:
 2. Verify `/health`.
 3. Start frontend app.
 4. Open landing page.
-5. Submit contact form.
-6. Check backend logs.
+5. Check the contact section placeholder.
+6. After contact form integration, submit a contact form and check backend logs.
 7. Run tests before commit.
 
 ---
@@ -169,7 +175,8 @@ Expected response:
 ```json
 {
   "status": "ok",
-  "service": "ai-services-platform"
+  "service": "ai-services-platform",
+  "environment": "local"
 }
 ```
 
@@ -212,19 +219,19 @@ Expected response:
 
 Suggested backend test command:
 
-```powershell
+```cmd
 cd backend
-pytest
+python -m pytest
 ```
 
-Suggested frontend test command:
+Current frontend validation command:
 
-```powershell
+```cmd
 cd frontend
-npm test
+npm run build
 ```
 
-If tests are not configured yet, this section should be updated when implementation starts.
+Backend tests are configured. A frontend test runner is not configured yet.
 
 ---
 
@@ -232,21 +239,20 @@ If tests are not configured yet, this section should be updated when implementat
 
 Suggested backend checks:
 
-```powershell
+```cmd
 cd backend
 ruff check .
 black --check .
 ```
 
-Suggested frontend checks:
+Current frontend check:
 
-```powershell
+```cmd
 cd frontend
-npm run lint
-npm run format:check
+npm run build
 ```
 
-Exact commands should be updated after the stack is finalized.
+Linting and formatting scripts should be added when the frontend implementation grows beyond the skeleton.
 
 ---
 

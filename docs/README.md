@@ -20,6 +20,16 @@ Current focus:
 
 MVP 2 and later items are future planning only. Do not implement later MVPs unless explicitly requested.
 
+Current implementation snapshot:
+
+- MVP 0 backend foundation is implemented with FastAPI.
+- Backend endpoints available locally: `GET /health` and `POST /api/contact`.
+- Lead handling is log-only for now; durable storage and email notifications are not implemented.
+- Backend Docker support exists for future Cloud Run deployment preparation.
+- MVP 0 frontend skeleton exists with Vite, React and TypeScript.
+- Frontend routes `/` and `/privacy` are available locally with placeholder sections.
+- Contact form submission, final frontend content, SEO polish and production deployment are still pending.
+
 ---
 
 ## Recommended Reading Order

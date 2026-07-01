@@ -19,6 +19,20 @@ Current focus:
 
 MVP 2 and later items are future planning only. Do not implement later MVP scope unless explicitly requested.
 
+Current MVP 0 backend status:
+
+- FastAPI backend exists in [`backend/`](backend/).
+- `GET /health` and `POST /api/contact` are implemented and covered by backend tests.
+- Contact submissions are handled through a lead service in log-only mode; no database or email notifications are implemented yet.
+- Backend Docker support exists for future Cloud Run deployment preparation.
+
+Current MVP 0 frontend status:
+
+- Vite, React and TypeScript skeleton exists in [`frontend/`](frontend/).
+- Routes `/` and `/privacy` are available locally.
+- Landing page sections, contact area and future chatbot area are placeholders.
+- Contact form submission, final privacy copy and SEO polish are still pending.
+
 ---
 
 ## Start Here

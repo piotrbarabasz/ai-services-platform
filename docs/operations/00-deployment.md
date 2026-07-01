@@ -94,27 +94,49 @@ The backend should listen on the port provided by the environment.
 
 For Cloud Run this usually means reading the `PORT` environment variable.
 
+Current status:
+
+- backend Dockerfile exists,
+- backend `.dockerignore` exists,
+- backend `/health` endpoint exists,
+- local Docker commands are documented,
+- Cloud Run deployment has not been executed.
+
 ---
 
-## 7. Example Backend Dockerfile Direction
+## 7. Backend Dockerfile
 
-Example target Dockerfile structure:
+The MVP 0 backend includes a minimal Dockerfile at:
+
+```text
+backend/Dockerfile
+```
+
+The container uses `python:3.12-slim`, installs dependencies from `requirements.txt`, copies the
+backend application code and starts Uvicorn on `0.0.0.0`.
+
+Runtime command:
 
 ```dockerfile
-FROM python:3.12-slim
-
-WORKDIR /app
-
-COPY requirements.txt .
-
-RUN pip install --no-cache-dir -r requirements.txt
-
-COPY app ./app
-
 CMD ["sh", "-c", "uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-8000}"]
 ```
 
-This is only a starting point. The final Dockerfile should be adjusted after backend implementation starts.
+The `PORT` environment variable is used for Cloud Run compatibility, with a local fallback to
+`8000`.
+
+Local container validation:
+
+```cmd
+cd backend
+docker build -t ai-services-backend .
+docker run --rm -p 8000:8000 -e PORT=8000 ai-services-backend
+```
+
+In another terminal:
+
+```cmd
+curl.exe http://localhost:8000/health
+```
 
 ---
 
@@ -125,8 +147,11 @@ Suggested backend variables:
 ```text
 APP_ENV=prod
 APP_NAME=ai-services-platform
+PORT=8000
+FRONTEND_URL=https://example.com
 ALLOWED_ORIGINS=https://example.com
 LEAD_STORAGE_MODE=log
+LOG_LEVEL=INFO
 ```
 
 Future variables:
@@ -184,20 +209,20 @@ Before the first manual deployment:
 
 Example commands to be adapted later:
 
-```powershell
+```cmd
 gcloud config set project YOUR_PROJECT_ID
 gcloud config set run/region europe-west1
 ```
 
 Build and submit image:
 
-```powershell
+```cmd
 gcloud builds submit backend --tag europe-west1-docker.pkg.dev/YOUR_PROJECT_ID/ai-services-platform/backend:latest
 ```
 
 Deploy to Cloud Run:
 
-```powershell
+```cmd
 gcloud run deploy ai-services-backend ^
   --image europe-west1-docker.pkg.dev/YOUR_PROJECT_ID/ai-services-platform/backend:latest ^
   --platform managed ^

@@ -46,6 +46,24 @@ This plan does not include:
 
 ---
 
+## 2.1 Current Repository Status Note
+
+As of the current backend implementation, the repository already includes:
+
+- backend FastAPI application skeleton,
+- backend configuration and CORS foundation,
+- `GET /health`,
+- `POST /api/contact`,
+- contact request validation models,
+- internal lead model and log-only lead service,
+- backend tests for health and contact endpoints,
+- backend Dockerfile and `.dockerignore`.
+
+If GitHub Issues are created from this plan later, adjust the backend-related issues instead of
+creating duplicate work items for completed backend tasks.
+
+---
+
 ## 3. Recommended GitHub Labels
 
 | Label | Purpose |

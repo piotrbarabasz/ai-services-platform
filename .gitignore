@@ -12,6 +12,12 @@ pytest-cache-files-*/
 .venv*/
 venv/
 
+# Node/frontend
+node_modules/
+dist/
+npm-debug.log*
+*.tsbuildinfo
+
 # Tooling and OS noise
 .coverage
 htmlcov/

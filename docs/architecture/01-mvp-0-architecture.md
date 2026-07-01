@@ -61,16 +61,16 @@ GCP-ready Runtime
 
 ## 4. Components
 
-| Component | Responsibility | MVP 0 Status |
+| Component | Responsibility | Current MVP 0 Status |
 |---|---|---|
-| Frontend Website | Public landing page and contact form | Required |
-| Backend API | Health check and contact endpoint | Required |
-| Lead Service | Validate and process contact requests | Required |
-| Persistence Layer | Store leads or prepare future storage | Optional / placeholder |
-| Notification Service | Notify owner about new leads | Optional / placeholder |
-| Logging | Basic backend logs | Required |
-| GCP Runtime | Cloud Run-ready deployment structure | Required |
-| Secret Management | Keep sensitive values outside code | Required |
+| Frontend Website | Public landing page and contact form | Skeleton implemented; final landing page and contact form pending |
+| Backend API | Health check and contact endpoint | Implemented |
+| Lead Service | Validate and process contact requests | Implemented with log-only handling |
+| Persistence Layer | Store leads or prepare future storage | Deferred; no database yet |
+| Notification Service | Notify owner about new leads | Deferred; no email integration yet |
+| Logging | Basic backend logs | Implemented for startup, health and contact flow |
+| GCP Runtime | Cloud Run-ready deployment structure | Dockerfile prepared; Cloud Run not deployed |
+| Secret Management | Keep sensitive values outside code | Environment examples documented; Secret Manager future |
 
 ---
 
@@ -150,6 +150,28 @@ backend/
     tests/
       test_health.py
       test_contact.py
+```
+
+Current implemented backend structure follows this shape with top-level `backend/tests/` and includes:
+
+```text
+backend/
+  app/
+    api/
+      health.py
+      contact.py
+    config/
+      settings.py
+    models/
+      contact.py
+      lead.py
+    services/
+      lead_service.py
+  tests/
+    test_health.py
+    test_contact.py
+  Dockerfile
+  .dockerignore
 ```
 
 ### Required Endpoints
